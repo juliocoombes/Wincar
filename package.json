@@ -4,11 +4,19 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+<<<<<<< HEAD
   "dev": "vite",
   "build": "vite build",       
   "preview": "vite preview",
   "typecheck": "tsc -b"          
 },
+=======
+    "dev": "vite",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b"
+  },
+>>>>>>> f5adc1e2f76e4eee0c61732ea12e6b75ea10ac81
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

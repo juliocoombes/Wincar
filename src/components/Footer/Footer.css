@@ -1,0 +1,80 @@
+/* =======================================
+   FOOTER V3 — PREMIUM FULL WIDTH
+   ======================================= */
+
+.site-footer-v3 {
+  width: 100%;
+  background: #0a1c33;               /* azul elegante profundo */
+  padding: 48px 0 36px;
+  margin-top: 60px;
+  color: #dfe6f3;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Contenedor centrado */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 26px;
+}
+
+/* Marca */
+.footer-brand-v3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-logo-v3 {
+  height: 32px;
+  opacity: 0.95;
+}
+
+.footer-brand-v3 strong {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer-copy-v3 {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* --- LINKS --- */
+
+.footer-links-v3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 22px;
+  justify-content: center;
+}
+
+.footer-links-v3 a {
+  color: #c9d6ea;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.footer-links-v3 a:hover {
+  opacity: 1;
+  color: #ffffff;
+}
+
+/* Mobile boost */
+@media (max-width: 480px) {
+  .site-footer-v3 {
+    padding: 36px 0 30px;
+  }
+
+  .footer-links-v3 {
+    gap: 14px 18px;
+  }
+}

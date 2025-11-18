@@ -1,0 +1,121 @@
+/* ===============================
+   MODELS GRID (solo para #modelos)
+   =============================== */
+
+/* Sección general */
+#modelos {
+  padding: 40px 0;
+  background: #f5f7fb;
+}
+
+/* Título */
+#modelos h2 {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Grid de cards */
+#modelos .grid {
+  display: grid;              /* por si el global no lo define */
+  gap: 24px;
+}
+
+/* Mobile: 1 columna (por defecto) */
+@media (min-width: 600px) {
+  #modelos .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  #modelos .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Card de cada modelo */
+#modelos .card {
+  background: #fff;           /* refuerza por si tu .card global cambia */
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+#modelos .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+
+/* Imagen del auto */
+#modelos .card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Contenido textual principal dentro del link */
+#modelos .card h3 {
+  font-size: 1.1rem;
+  margin: 12px 16px 4px;
+  color: var(--brand);
+}
+
+#modelos .card p {
+  margin: 0 16px 10px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Meta: precio + ficha técnica */
+#modelos .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 16px 10px;
+}
+
+/* Pills (precio desde / ficha técnica) */
+#modelos .badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: #eef2ff;
+  color: var(--brand);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+#modelos .badge:hover {
+  background: #dde4ff;
+}
+
+/* Lista de equipamiento (reforzamos un poco el estilo) */
+#modelos ul {
+  font-size: 0.85rem;
+  padding-left: 28px;        /* por si cambia el inline en el futuro */
+  margin-bottom: 16px;
+  color: #444;
+}
+
+#modelos li {
+  margin-bottom: 4px;
+}
+
+/* Ajustes responsivos extra para móvil */
+@media (max-width: 599px) {
+  #modelos .card img {
+    height: 180px;
+  }
+
+  #modelos h2 {
+    font-size: 1.5rem;
+  }
+}

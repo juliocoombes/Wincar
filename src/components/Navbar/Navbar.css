@@ -1,0 +1,112 @@
+/* ===============================
+   NAVBAR (solo afecta a este componente)
+   =============================== */
+
+/* Wrapper que ocupa el ancho completo */
+.navbar-wrapper {
+  width: 100%;
+  background: var(--light);
+  position: sticky;            /* se queda arriba al hacer scroll */
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+/* Contenido centrado */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Marca / logo */
+.navbar h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+/* Links desktop */
+.navlinks {
+  display: none;               /* mobile: oculto */
+  gap: 24px;
+  align-items: center;
+}
+
+.navbar a,
+.mobile-menu a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--dark);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.navbar a::after,
+.mobile-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+.navbar a:hover::after,
+.mobile-menu a:hover::after {
+  width: 100%;
+}
+
+/* Botón hamburguesa (solo mobile) */
+.hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Menú mobile desplegable */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 16px 16px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border-radius: 0 0 14px 14px;
+}
+
+.mobile-menu a {
+  padding: 4px 0;
+}
+
+/* ===============================
+   BREAKPOINT DESKTOP
+   =============================== */
+@media (min-width: 768px) {
+  .navlinks {
+    display: flex;            /* desktop: mostramos links */
+  }
+
+  .hamburger {
+    display: none;            /* desktop: ocultamos hamburguesa */
+  }
+
+  .mobile-menu {
+    display: none !important; /* por si queda monteado, lo forzamos a ocultar */
+  }
+
+  .navbar {
+    padding: 14px 24px;
+  }
+
+  .navbar h3 {
+    font-size: 1.2rem;
+  }
+}

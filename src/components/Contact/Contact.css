@@ -1,0 +1,190 @@
+/* =======================================
+   CONTACTO (solo #contacto / .contact-section)
+   ======================================= */
+
+#contacto.contact-section {
+  background: #ffffff;
+  padding: 48px 0;
+}
+
+/* Layout principal: info + form */
+#contacto .contact-layout {
+  display: grid;
+  gap: 28px;
+  align-items: flex-start;
+  margin-top: 8px;
+}
+
+/* Mobile: 1 columna */
+@media (max-width: 767px) {
+  #contacto .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Desktop: 2 columnas */
+@media (min-width: 768px) {
+  #contacto .contact-layout {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+}
+
+/* -----------------------------
+   COLUMNA IZQUIERDA (INFO)
+   ----------------------------- */
+
+#contacto .contact-info {
+  background: #f5f7ff;              /* 🔹 fondo suave */
+  border-radius: 16px;
+  padding: 18px 18px 16px;          /* 🔹 padding interno */
+}
+
+#contacto .contact-info h2 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  color: var(--brand);
+}
+
+#contacto .contact-info p {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+#contacto .contact-info .small {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* Links en info */
+#contacto .contact-info a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+#contacto .contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Redes sociales */
+#contacto .contact-social a {
+  margin-right: 10px;
+}
+
+/* -----------------------------
+   COLUMNA DERECHA (CARD FORM)
+   ----------------------------- */
+
+#contacto .contact-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+  padding: 28px 26px;            /* 🔹 más padding interno */
+  max-width: 520px;              /* 🔹 limita ancho máximo */
+  margin-left: auto;             /* 🔹 centra la card */
+  margin-right: auto;            /* 🔹 centra la card */
+  width: 100%;
+}
+
+/* Estado "gracias" */
+#contacto .contact-thanks h3 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+  color: var(--brand);
+}
+
+#contacto .contact-thanks p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Formulario */
+#contacto .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Inputs y textarea */
+#contacto .contact-form input,
+#contacto .contact-form textarea {
+  width: 100%;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d0d7e4;
+  outline: none;
+  font-family: inherit;
+  background: #f9fbff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+#contacto .contact-form textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+#contacto .contact-form input:focus,
+#contacto .contact-form textarea:focus {
+  border-color: var(--accent);
+  background: #ffffff;
+  box-shadow: 0 0 0 2px rgba(42, 85, 151, 0.18);
+}
+
+/* Botón dentro del contacto (nuevo estilo) */
+/* BOTÓN PREMIUM */
+#contacto .contact-btn {
+  width: 100%;
+  margin-top: 6px;
+
+  /* 🔥 EXACTAMENTE IGUAL A LOS INPUTS */
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  border-radius: 10px;
+
+  border: none;
+  font-weight: 600;
+
+  background: #000;   /* poné el color que quieras */
+  color: #fff;
+
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+#contacto .contact-btn:hover:not(:disabled) {
+  background: #333;
+  transform: translateY(-1px);
+}
+
+#contacto .contact-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+
+
+/* Ajustes de padding en pantallas pequeñas */
+@media (max-width: 480px) {
+  #contacto.contact-section {
+    padding: 36px 0;
+  }
+
+  #contacto .contact-card {
+    padding: 20px 16px;
+  }
+
+  #contacto .contact-info {
+    padding: 16px 14px;
+  }
+}
+@media (max-width: 600px) {
+  #contacto .contact-card {
+    padding: 22px 18px;
+    margin-left: 12px;     /* 🔹 respira a los lados */
+    margin-right: 12px;
+    max-width: none;
+  }
+}

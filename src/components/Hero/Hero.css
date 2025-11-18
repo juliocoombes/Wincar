@@ -1,0 +1,105 @@
+/* =======================================
+   HERO PRINCIPAL
+   ======================================= */
+
+.hero {
+  padding: 60px 0 70px;
+  background: #f5f7ff;               /* tono suave profesional */
+}
+
+/* Layout responsive */
+.hero .hero-layout {
+  display: grid;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Desktop: 2 columnas */
+@media (min-width: 768px) {
+  .hero .hero-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* -------------------------
+   COLUMNA IZQUIERDA (texto)
+   ------------------------- */
+
+.hero-info h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--brand);
+  margin-bottom: 10px;
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* -------------------------
+   BOTONES
+   ------------------------- */
+
+/* Botón principal */
+.hero-btn-primary {
+  background: #000;            /* negro premium */
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.hero-btn-primary:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* Botón secundario */
+.hero-btn-secondary {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-left: 10px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hero-btn-secondary:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Leyenda pequeña */
+.hero-caption {
+  margin-top: 12px;
+  color: #555;
+  font-size: 0.8rem;
+}
+
+/* -------------------------
+   COLUMNA DERECHA (imagen)
+   ------------------------- */
+
+.hero-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile optimización */
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 0 50px;
+  }
+
+  .hero-info h1 {
+    font-size: 2rem;
+  }
+}

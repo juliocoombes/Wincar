@@ -1,112 +1,142 @@
-/* ===============================
-   NAVBAR (solo afecta a este componente)
-   =============================== */
-
-/* Wrapper que ocupa el ancho completo */
-.navbar-wrapper {
-  width: 100%;
-  background: var(--light);
-  position: sticky;            /* se queda arriba al hacer scroll */
+/* Raíz del navbar: sticky + transición de fondo */
+.navbar-root {
+  position: sticky;
   top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  z-index: 1000;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.2s ease, padding 0.2s ease;
+  padding: 10px 0;
 }
 
-/* Contenido centrado */
+/* Estado inicial: fondo casi transparente */
+.navbar-root {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Cuando se hace scroll: fondo sólido, sombra y “shrink” */
+.navbar-root.navbar-scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  padding: 6px 0;
+  transform: translateY(0);
+}
+
+.navbar-wrapper {
+  width: 100%;
+}
+
 .navbar {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 12px 16px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Marca / logo */
-.navbar h3 {
+/* Logo */
+.logo {
+  text-decoration: none;
+  color: #103166;
+}
+
+.logo h3 {
   margin: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--brand);
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* Links desktop */
 .navlinks {
-  display: none;               /* mobile: oculto */
-  gap: 24px;
+  display: flex;
   align-items: center;
+  gap: 24px;
 }
 
-.navbar a,
-.mobile-menu a {
+.navlinks a {
+  text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--dark);
-  text-decoration: none;
+  color: #1f2933;
   position: relative;
-  padding-bottom: 2px;
 }
 
-.navbar a::after,
-.mobile-menu a::after {
+.navlinks a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -4px;
   width: 0;
   height: 2px;
-  background: var(--accent);
+  background: #103166;
   transition: width 0.2s ease;
 }
 
-.navbar a:hover::after,
-.mobile-menu a:hover::after {
+.navlinks a:hover::after {
   width: 100%;
 }
 
-/* Botón hamburguesa (solo mobile) */
+/* Hamburguesa mobile */
 .hamburger {
-  font-size: 1.5rem;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 28px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  padding: 0;
   cursor: pointer;
-  user-select: none;
 }
 
-/* Menú mobile desplegable */
+.hamburger span {
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: #103166;
+}
+
+/* Menú mobile */
 .mobile-menu {
+  position: fixed;
+  top: 56px; /* alto aprox del navbar */
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 12px 16px 16px;
-  background: #fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  border-radius: 0 0 14px 14px;
+  padding: 12px 20px 20px;
+  gap: 8px;
 }
 
 .mobile-menu a {
-  padding: 4px 0;
+  text-decoration: none;
+  padding: 10px 4px;
+  font-size: 1rem;
+  color: #111827;
+  border-radius: 8px;
 }
 
-/* ===============================
-   BREAKPOINT DESKTOP
-   =============================== */
-@media (min-width: 768px) {
+.mobile-menu a:hover {
+  background: #f3f4f6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   .navlinks {
-    display: flex;            /* desktop: mostramos links */
+    display: none;
   }
 
   .hamburger {
-    display: none;            /* desktop: ocultamos hamburguesa */
-  }
-
-  .mobile-menu {
-    display: none !important; /* por si queda monteado, lo forzamos a ocultar */
+    display: flex;
   }
 
   .navbar {
-    padding: 14px 24px;
-  }
-
-  .navbar h3 {
-    font-size: 1.2rem;
+    padding: 0 16px;
   }
 }

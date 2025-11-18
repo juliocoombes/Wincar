@@ -6,6 +6,7 @@ import Hero from "./components/Hero/Hero";
 import ModelsGrid from "./components/ModelsGrid/ModelsGrid";
 import PostSale from "./components/PostSale/PostSale";
 import Sucursales from "./components/Branches/Branches";
+import "./App.css";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import ModelDetail from "./components/ModelDetail/ModelDetail"; 
@@ -18,7 +19,7 @@ function Home() {
       <Hero />
       <ModelsGrid />
       <PostSale />
-      <Sucursales />
+      
       <Contact />
     </>
   );

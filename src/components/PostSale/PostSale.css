@@ -2,23 +2,46 @@
    POSVENTA (sección premium)
    ======================================= */
 
+:root {
+  --brand: #103166; /* por las dudas, lo fijamos acá también */
+}
+
 #posventa.postventa-section {
-  background: #ffffff;
+  background: linear-gradient(180deg, #f5f7ff 0%, #ffffff 45%);
   padding: 60px 0 70px;
+}
+
+/* Header sección */
+.postventa-header {
+  margin-bottom: 28px;
 }
 
 /* Título principal */
 #posventa h2 {
-  font-size: 1.8rem;
-  margin-bottom: 18px;
-  color: var(--brand);
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+  color: var(--brand); /* #103166 */
   font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+#posventa h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 56px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--brand);
 }
 
 /* Descripción general */
 #posventa .postventa-desc {
   max-width: 760px;
-  margin-bottom: 28px;
+  margin-top: 16px;
+  margin-bottom: 0;
   font-size: 1rem;
   color: #444;
   line-height: 1.6;
@@ -29,6 +52,7 @@
    =============================== */
 
 #posventa .postventa-grid {
+  margin-top: 30px;
   display: grid;
   gap: 26px;
 }
@@ -52,26 +76,35 @@
    =============================== */
 
 #posventa .postventa-card {
-  background: #f9faff;
-  border-radius: 16px;
+  background: #ffffff;
+  border-radius: 18px;
   padding: 0;
-  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
   overflow: hidden;
+  position: relative;
 }
 
+/* Franja de color arriba (accent) */
+#posventa .postventa-card-accent {
+  height: 4px;
+  background: var(--brand);
+}
+
+/* Hover */
 #posventa .postventa-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09);
 }
 
+/* Contenido */
 #posventa .postventa-card-content {
   padding: 20px 22px 22px;
 }
 
 /* Título dentro de la card */
 #posventa .postventa-card-content h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   margin-bottom: 8px;
   font-weight: 600;
   color: var(--brand);

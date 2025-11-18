@@ -36,6 +36,7 @@ export type SiteContent = {
     ctaPrincipal: { label: string; href: string }
     ctaSecundaria?: { label: string; href: string }
     imagen?: string
+    imagenFondo?: string
   }
   modelos: Modelo[]
   posventa: {
@@ -81,7 +82,8 @@ const content: SiteContent = {
     subtitulo: "Concesionaria oficial Hyundai",
     ctaPrincipal: { label: "Solicitar cotización", href: "#contacto" },
     ctaSecundaria: { label: "Ver Modelos", href: "#modelos" },
-    imagen: "/hero.jpg", // (opcional)
+    imagen: "/hero.jpg", 
+    imagenFondo:"./tucson/tucson-1.jpg"
   },
   modelos: [
     {

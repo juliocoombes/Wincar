@@ -6,9 +6,16 @@ export default function Hero() {
   const h = content.hero;
 
   return (
-    <header className="hero">
+    <header
+      className="hero"
+      style={{
+        backgroundImage: `url(${h.imagenFondo})`, // 👈 Fondo del PRIMER diseño
+      }}
+    >
+      <div className="hero-overlay"></div>
+
       <div className="container hero-layout">
-        {/* COLUMNA IZQUIERDA */}
+        {/* Texto */}
         <div className="hero-info">
           <h1>{h.titulo}</h1>
           <p className="hero-sub">{h.subtitulo}</p>
@@ -25,10 +32,10 @@ export default function Hero() {
             )}
           </div>
 
-          <div className="small hero-caption">Subtitulo <code></code></div>
+          <div className="small hero-caption">Subtitulo</div>
         </div>
 
-        {/* COLUMNA DERECHA */}
+        {/* Imagen opcional */}
         <div className="hero-image">
           {h.imagen && <img src={h.imagen} alt="" />}
         </div>

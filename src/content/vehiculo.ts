@@ -214,10 +214,10 @@ const hb20: Vehiculo = {
   brochureUrl:
     "https://www.hyundai.com.ar/publicfiles/datasheets/hb20fichatecnica-final_compressed_1732281228.pdf",
   imagenes: [
-    "/hb20h/hb20h-2.jpg",
+    "/hb20h/hb20h-4.jpg",
     "/hb20h/hb20h-1.jpg",
     "/hb20h/hb20h-3.jpg",
-    "/hb20h/hb20h-4.jpeg",
+    "/hb20h/hb20h-2.jpeg",
     "/hb20h/hb20h-5.jpg"
   ],
   videoUrl: "https://www.youtube.com/watch?v=23hJMspQP4s"

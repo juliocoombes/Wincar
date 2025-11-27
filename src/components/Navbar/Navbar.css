@@ -148,4 +148,42 @@
     padding: 0 16px;
     gap: 16px;
   }
+  /* Animación hamburguesa → X */
+.hamburger {
+  position: relative;
+  z-index: 2000; /* arriba del menú */
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 28px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  border-radius: 4px;
+  background: #ffffff;      /* blanco para que se vea sobre el banner */
+  transition: 0.2s ease;
+}
+
+/* Cambios cuando está OPEN */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 }

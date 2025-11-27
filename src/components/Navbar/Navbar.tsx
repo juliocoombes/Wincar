@@ -43,14 +43,15 @@ export default function Navbar() {
 
           {/* Botón hamburguesa mobile */}
           <button
-            className="hamburger"
-            onClick={() => setOpen((prev) => !prev)}
-            aria-label="Abrir menú"
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+  className={`hamburger ${open ? "open" : ""}`}
+  onClick={() => setOpen((prev) => !prev)}
+  aria-label={open ? "Cerrar menú" : "Abrir menú"}
+>
+  <span />
+  <span />
+  <span />
+</button>
+
         </div>
       </div>
 

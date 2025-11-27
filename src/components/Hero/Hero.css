@@ -194,7 +194,7 @@
 /* MOBILE (menos de 480px) */
 @media (max-width: 480px) {
   .hero {
-    padding: 28px 0 35px;
+    padding: 42px 0 35px;
     min-height: 300px;
     background-position: center 32%; /* mejor framing */
   }
@@ -211,8 +211,10 @@
     margin-bottom: 12px;
   }
 
-  .hero-info {
-    max-width: 85%;        /* evita que ocupe toda la pantalla */
+    .hero-info {
+    max-width: 90%;            /* un poco más ancho pero controlado */
+    margin-top: 0;             /* sacamos el -10px que lo pegaba arriba */
+    padding: 0 16px;           /* margen interno lateral extra */
   }
 
   /* --- BOTONES --- */

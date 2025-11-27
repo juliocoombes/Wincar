@@ -19,7 +19,7 @@ export default function ModelsGrid() {
                   alt={m.nombreComercial}
                 />
                 <h3>{m.nombreComercial}</h3>
-                <p>{m.resumenCorto}</p>
+                <p>{/*m.resumenCorto*/}</p>
               </Link>
 
               <div className="meta">
@@ -50,11 +50,11 @@ export default function ModelsGrid() {
                 }}
               >
                 {/* uso algunos bullets de la primera versión como destacados */}
-                {m.versiones[0]?.equipamientoClaves
+                {/*m.versiones[0]?.equipamientoClaves
                   .slice(0, 4)
                   .map((d, i) => (
                     <li key={i}>{d}</li>
-                  ))}
+                  ))*/}
               </ul>
             </article>
           ))}

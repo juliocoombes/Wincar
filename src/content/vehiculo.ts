@@ -220,10 +220,148 @@ const hb20: Vehiculo = {
     "/hb20h/hb20h-4.jpeg",
     "/hb20h/hb20h-5.jpg"
   ],
-  videoUrl: "https://www.youtube.com/watch?v=cjVO54CSy4E"
+  videoUrl: "https://www.youtube.com/watch?v=23hJMspQP4s"
 }
 
 };
+const hb20s: Vehiculo = {
+  id: "hb20s",
+  nombreComercial: "HB20S Sedán",
+  eslogan: "Elegancia, innovación y confianza en cada kilómetro.",
+  resumenCorto:
+    "Sedán compacto pensado para el día a día, con gran espacio interior, equipamiento de seguridad de última generación y confort de marcha ideal para ciudad y ruta.",
+
+  versiones: [
+    {
+      nombre: "Comfort Plus MT",
+      transmision: "Manual 6 vel",
+      precioLista: "Consultar",
+      equipamientoClaves: [
+        "Motor 1.6 123 CV",
+        "Control de estabilidad y tracción",
+        "6 airbags",
+        "Pantalla táctil 8\" con Android Auto / Apple CarPlay"
+      ]
+    },
+    {
+      nombre: "Platinum Safety AT",
+      transmision: "Automática 6 vel",
+      precioLista: "Consultar",
+      equipamientoClaves: [
+        "Control de velocidad crucero con limitador",
+        "Asistente de mantenimiento de carril",
+        "Cámara de retroceso con líneas guía",
+        "Cargador inalámbrico de smartphone"
+      ]
+    }
+  ],
+
+  motor: {
+    denominacion: "Gamma 1.6 16V DOHC D-CVVT",
+    cilindrada_cc: 1591,
+    potencia_cv_rpm: "123 @ 6.300 rpm",
+    torque_nm_rpm: "155 @ 4.850 rpm",
+    combustible: "Nafta",
+    traccion: "Delantera",
+    normaEmisiones: "Euro 5 aprox."
+  },
+
+  dimensiones: {
+    // Valores aproximados, podés ajustarlos según ficha oficial
+    largo_mm: 4270,
+    ancho_mm: 1720,
+    alto_mm: 1470,
+    distanciaEntreEjes_mm: 2530,
+    despeje_mm: 160,
+    baul_l: 475,
+    tanque_l: 50,
+    peso_kg: 1100,
+    neumaticos: "185/60 R15",
+    llantas: "Aleación 15\""
+  },
+
+  seguridad: {
+    airbags: "6 (frontales, laterales y de cortina)",
+    abs_ebd: true,
+    esc_tcs: true,
+    hac: true,
+    ess: true,
+    camaraRetroceso: true,
+    sensoresEstacionamiento: "Traseros",
+    isofix: true,
+    otras: [
+      // Textos que ya tenías:
+      "Control de estabilidad (ESP): ayuda a mantener el control del vehículo en maniobras bruscas o curvas, ajustando frenos y potencia para evitar derrapes.",
+      "Control de tracción (TCS).",
+      "Frenos ABS con EBD: distribuye la fuerza de frenado entre las ruedas, evitando el bloqueo y optimizando la distancia de detención.",
+      "Asistente de arranque en pendiente (HAC): evita que el vehículo retroceda al soltar el freno en una subida.",
+      "Monitor de presión de neumáticos.",
+      "Asistente de Tráfico Cruzado con Anticolisión (RCCA).",
+      "Alerta y frenado autónomo de emergencia (FCA).",
+      "Asistente de mantenimiento y centrado de carril (LKA/LFA).",
+      "Asistente de punto ciego (BCA)."
+    ]
+  },
+
+  confort: {
+    accesoSinLlave: true,
+    botonStartStop: true,
+    climatizacion: "Aire acondicionado manual",
+    direccion: "Asistida eléctricamente (MDPS)",
+    levantavidrios: "4 eléctricos (one-touch conductor)",
+    espejos: "Eléctricos con luz de giro",
+    tapizados: "Tela bicolor",
+    volante: "Regulable en altura y profundidad, multifunción",
+    otras: [
+      "Control de velocidad crucero con limitador: permite mantener una velocidad constante sin usar el acelerador y fijar un límite máximo.",
+      "Asiento trasero rebatible 60/40.",
+      "Computadora de a bordo.",
+      "Llave inteligente para apertura y cierre sin necesidad de insertar la llave.",
+      "Cluster totalmente digital con gráficos modernos y fáciles de leer."
+    ]
+  },
+
+  multimedia: {
+    pantalla: "8\" táctil",
+    conectividad: [
+      "Apple CarPlay",
+      "Android Auto",
+      "Bluetooth",
+      "USB"
+    ],
+    parlantes: 4,
+    puertos: ["USB delantero", "Toma 12V"],
+    camara: "Retroceso",
+    // integro el cargador inalámbrico acá también como plus tecnológico
+    // (aunque ya lo mencionamos en confort, no molesta repetir para marketing)
+  },
+
+  colores: {
+    exteriores: ["Blanco", "Plata", "Gris", "Negro"],
+    interiores: ["Negro/Tela"]
+  },
+
+  garantia: {
+    garantia: "Consultar según mercado (3 a 5 años / 100.000 km aprox.)",
+    origen: "Brasil",
+    servicio: "Mantenimiento cada 10.000 km o 12 meses"
+  },
+
+  links: {
+    brochureUrl:
+      "https://www.hyundai.com.ar/publicfiles/datasheets/hb20sfichatecnica-final_compressed_1732281228.pdf",
+    imagenes: [
+      "/hb20/hb20-1.jpg",
+      "/hb20/hb20-2.jpg",
+      "/hb20/hb20-3.jpg",
+      "/hb20/hb20-4.jpg",
+    
+    ],
+    videoUrl: "https://www.youtube.com/watch?v=23hJMspQP4s"
+  }
+};
+
+
 
 // NUEVA CRETA
 const creta: Vehiculo = {
@@ -346,7 +484,7 @@ const creta: Vehiculo = {
     "/creta/creta-6.jpg",
     "/creta/creta-7.jpg"
   ],
-  videoUrl: "https://www.youtube.com/watch?v=creta_video_demo"
+  videoUrl: "https://www.youtube.com/watch?v=6q1Qaq6ZqLk"
 }
 };
 
@@ -472,7 +610,7 @@ const tucson: Vehiculo = {
     "/tucson/tucson-7.jpg",
     "/tucson/tucson-8.jpg"
   ],
-  videoUrl: "https://www.youtube.com/watch?v=tucson_video_demo"
+  videoUrl: "https://www.youtube.com/watch?v=Dmgn7zpVsms"
 }
 
 };
@@ -605,13 +743,12 @@ const santaFe: Vehiculo = {
     "/santafe/santafe-3.jpg",
     "/santafe/santafe-1.jpg",
     "/santafe/santafe-2.jpg",
-    
     "/santafe/santafe-4.jpg",
     "/santafe/santafe-5.jpg",
     "/santafe/santafe-6.jpg",
     "/santafe/santafe-7.jpg"
   ],
-  videoUrl: "https://www.youtube.com/watch?v=santafe_video_demo"
+  videoUrl: "https://www.youtube.com/watch?v=CYK0ONs8PNY"
 }
 
 };
@@ -732,19 +869,21 @@ const staria: Vehiculo = {
     brochureUrl:
       "https://cdn.motor1.com/pdf-files/ficha-tecnica-hyundai-staria-4wd-2022.pdf",
     imagenes: [
-      "/hb20/hb20-1.jpg",
-      "/Hb20/hb20-2.jpg",
-      "/hb20/hb20-3.jpg",
-      "/hb20/hb20-4.jpg"
+      "/staria/staria-1.jpg",
+      "/staria/staria-2.jpg",
+      "/staria/staria-3.jpg",
+      "/staria/staria-4.jpg",
+      "/staria/staria-5.jpg",
+      "/staria/staria-6.jpg",
     ],
     videoUrl: "https://www.youtube.com/watch?v=staria_video_demo"
   }
 };
 
 // ARRAY GENERAL (por si te sirve agruparlos)
-const vehiculos: Vehiculo[] = [hb20, creta, tucson, santaFe, staria];
+const vehiculos: Vehiculo[] = [hb20,hb20s, creta, tucson, santaFe, staria];
 
-export { hb20, creta, tucson, santaFe, staria, vehiculos };
+export { hb20,hb20s, creta, tucson, santaFe, staria, vehiculos};
 
 export function getVehiculoById(id: string) {
   return vehiculos.find(v => v.id === id);

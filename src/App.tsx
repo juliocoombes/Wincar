@@ -11,6 +11,8 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import ModelDetail from "./components/ModelDetail/ModelDetail"; 
 import content from "./content/siteContent";
+import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
+import Branches from "./components/Branches/Branches";
 
 // Componente HOME con la landing
 function Home() {
@@ -19,7 +21,8 @@ function Home() {
       <Hero />
       <ModelsGrid />
       <PostSale />
-      
+      <Branches/>
+      <WhatsAppButton/>
       <Contact />
     </>
   );

@@ -4,24 +4,27 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  backdrop-filter: blur(10px);
+  /* Banner de fondo */
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.1)),
+    url("/otros/navbar-banner.jpg");
+  background-size: cover;
+  background-position: 30%;
+  background-repeat: no-repeat;
+
+  backdrop-filter: blur(6px);
   transition: background-color 0.2s ease, box-shadow 0.2s ease,
     transform 0.2s ease, padding 0.2s ease;
-  padding: 10px 0;
+  padding: 32px 0;
 }
 
-/* Estado inicial: fondo casi transparente */
-.navbar-root {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* Cuando se hace scroll: fondo sólido, sombra y “shrink” */
+/* Cuando se hace scroll: si querés que se vuelva blanco sólido */
 .navbar-root.navbar-scrolled {
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
-  padding: 6px 0;
-  transform: translateY(0);
+  padding: 18px 0;
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
 }
+
 
 .navbar-wrapper {
   width: 100%;
@@ -33,18 +36,19 @@
   padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* antes: space-between */
+  gap: 48px; /* separación entre logo y links */
 }
 
 /* Logo */
 .logo {
   text-decoration: none;
-  color: #103166;
+  color: #ffffff; /* para que se lea sobre el banner */
 }
 
 .logo h3 {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -56,11 +60,12 @@
   gap: 24px;
 }
 
+/* Texto de links más claro sobre la imagen */
 .navlinks a {
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
-  color: #1f2933;
+  color: #f9fafb;
   position: relative;
 }
 
@@ -71,9 +76,10 @@
   bottom: -4px;
   width: 0;
   height: 2px;
-  background: #103166;
+  background: #ffffff;
   transition: width 0.2s ease;
 }
+
 
 .navlinks a:hover::after {
   width: 100%;
@@ -127,16 +133,19 @@
 }
 
 /* Responsive */
+/* Responsive */
 @media (max-width: 768px) {
   .navlinks {
     display: none;
   }
 
   .hamburger {
-    display: flex;
+    display: flex !important;
+    margin-left: auto; /* la manda a la derecha */
   }
 
   .navbar {
     padding: 0 16px;
+    gap: 16px;
   }
 }

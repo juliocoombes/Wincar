@@ -74,7 +74,7 @@ export default function ModelDetail() {
 
         {/* VERSIONES */}
         <section className="modeldetail-grid">
-          <h2>Versiones</h2>
+          
 
           {vehiculo.versiones.map((v, idx) => (
             <article key={idx} className="card">
@@ -164,15 +164,37 @@ export default function ModelDetail() {
             )}
           </div>
 
-          <div className="card">
-            <h2>Multimedia</h2>
+<div className="card modeldetail-multimedia">
+  <div className="modeldetail-multimedia-text">
+    <h2>Multimedia</h2>
 
-            {vehiculo.multimedia.pantalla && <p><strong>Pantalla:</strong> {vehiculo.multimedia.pantalla}</p>}
-            {vehiculo.multimedia.conectividad && <p><strong>Conectividad:</strong> {vehiculo.multimedia.conectividad.join(", ")}</p>}
-            {typeof vehiculo.multimedia.parlantes === "number" && <p><strong>Parlantes:</strong> {vehiculo.multimedia.parlantes}</p>}
-            {vehiculo.multimedia.puertos && <p><strong>Puertos:</strong> {vehiculo.multimedia.puertos.join(", ")}</p>}
-            {vehiculo.multimedia.camara && <p><strong>Cámara:</strong> {vehiculo.multimedia.camara}</p>}
-          </div>
+    {vehiculo.multimedia.pantalla && (
+      <p><strong>Pantalla:</strong> {vehiculo.multimedia.pantalla}</p>
+    )}
+    {vehiculo.multimedia.conectividad && (
+      <p><strong>Conectividad:</strong> {vehiculo.multimedia.conectividad.join(", ")}</p>
+    )}
+    {typeof vehiculo.multimedia.parlantes === "number" && (
+      <p><strong>Parlantes:</strong> {vehiculo.multimedia.parlantes}</p>
+    )}
+    {vehiculo.multimedia.puertos && (
+      <p><strong>Puertos:</strong> {vehiculo.multimedia.puertos.join(", ")}</p>
+    )}
+    {vehiculo.multimedia.camara && (
+      <p><strong>Cámara:</strong> {vehiculo.multimedia.camara}</p>
+    )}
+  </div>
+
+  {vehiculo.links.imagenes[1] && (
+    <div className="modeldetail-multimedia-img">
+      <img
+        src={vehiculo.links.imagenes[1]}
+        alt={`${vehiculo.nombreComercial} interior multimedia`}
+      />
+    </div>
+  )}
+</div>
+
         </section>
 
         {/* COLORES / GARANTÍA */}

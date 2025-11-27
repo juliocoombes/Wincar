@@ -16,30 +16,31 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+
   display: flex;
-  flex-direction: column;
+  justify-content: space-between; /* separa logo y links */
   align-items: center;
-  text-align: center;
+
+  text-align: left;
   gap: 26px;
 }
 
 /* Marca */
 .footer-brand-v3 {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* logo + texto al costado */
   align-items: center;
-  gap: 6px;
+  gap: 14px; /* separa logo y texto */
 }
 
 .footer-logo-v3 {
-  height: 32px;
-  opacity: 0.95;
+  height: 50px;   /* más grande */
+  opacity: 1;
 }
 
-.footer-brand-v3 strong {
-  font-size: 1rem;
-  color: #ffffff;
-  font-weight: 600;
+.footer-brand-v3 strong,
+.footer-brand-v3 .footer-copy-v3 {
+  text-align: left;
 }
 
 .footer-copy-v3 {
@@ -53,7 +54,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px 22px;
-  justify-content: center;
+  justify-content: flex-end; /* empuja links a la derecha */
 }
 
 .footer-links-v3 a {
@@ -76,5 +77,19 @@
 
   .footer-links-v3 {
     gap: 14px 18px;
+  }
+}
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-brand-v3 {
+    flex-direction: column; /* vuelve a vertical */
+  }
+
+  .footer-links-v3 {
+    justify-content: center;
   }
 }

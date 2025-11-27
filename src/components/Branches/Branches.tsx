@@ -41,8 +41,10 @@ export default function Sucursales() {
                 <div className="sucursal-mapa-wrapper">
                   <iframe
                     src={s.mapaEmbedUrl}
-                    loading="lazy"
-                    title={`Mapa ${s.nombre}`}
+  loading="lazy"
+  title={`Mapa ${s.nombre}`}
+  allowFullScreen
+  referrerPolicy="no-referrer-when-downgrade"
                   />
                 </div>
               ) : null}

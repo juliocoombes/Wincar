@@ -30,14 +30,18 @@ export type SiteContent = {
   marca: string
   logo?: string
   nav: { label: string; href: string }[]
+
   hero: {
-    titulo: string
-    subtitulo: string
-    ctaPrincipal: { label: string; href: string }
-    ctaSecundaria?: { label: string; href: string }
-    imagen?: string
-    imagenFondo?: string
+    slides: {
+      imagen: string            // imagen de fondo del slide
+      titulo: string
+      subtitulo: string
+      ctaPrincipal?: { label: string; href: string }
+      ctaSecundaria?: { label: string; href: string }
+      imagenLateral?: string    // opcional: imagen a la derecha
+    }[]
   }
+
   modelos: Modelo[]
   posventa: {
     titulo: string
@@ -68,9 +72,10 @@ export type SiteContent = {
   }
 }
 
+
 const content: SiteContent = {
   marca: "Wincar Motors",
-  logo: "/logo.png", // (opcional) subir a /public
+  logo: "/otros/logo.jpg", // (opcional) subir a /public
   nav: [
     { label: "Modelos", href: "#modelos" },
     { label: "Posventa", href: "#posventa" },
@@ -78,13 +83,49 @@ const content: SiteContent = {
     { label: "Contacto", href: "#contacto" },
   ],
   hero: {
-    titulo: "WINCAR MOTORS",
-    subtitulo: "Concesionaria oficial Hyundai",
-    ctaPrincipal: { label: "Solicitar cotización", href: "#contacto" },
-    ctaSecundaria: { label: "Ver Modelos", href: "#modelos" },
-    imagen: "/hero.jpg", 
-    imagenFondo:"./tucson/tucson-1.jpg"
-  },
+  slides: [
+    {
+      imagen: "/carrousel/carrousel-3.jpg",
+      titulo: "Nuevo HB20",
+      subtitulo: "Potencia, seguridad y tecnología.",
+      ctaPrincipal: { label: "Descubrir", href: "/modelos/hb20" },
+      ctaSecundaria: { label: "Contactanos", href: "#contacto" },
+      imagenLateral: "/images/lado1.png"
+    },
+    {
+      imagen: "/carrousel/carrousel-6.jpg",
+      titulo: "Hyundai Creta",
+      subtitulo: "Conectividad total.",
+      ctaPrincipal: { label: "Descubrir", href: "/modelos/creta" },
+      imagenLateral: "/images/lado2.png"
+    },
+    {
+      imagen: "/carrousel/carrousel-4.jpg",
+      titulo: "HB20s",
+      subtitulo: "Elegancia y performance.",
+      ctaPrincipal: { label: "Descubrir", href: "#hb20s" }
+    },
+    {
+      imagen: "/carrousel/carrousel-2.jpg",
+      titulo: "Tucson Turbo",
+      subtitulo: "Elegancia y performance.",
+      ctaPrincipal: { label: "Descubrir", href: "/modelos/creta" }
+    },
+    {
+      imagen: "/carrousel/carrousel-1.jpg",
+      titulo: "Santa Fe",
+      subtitulo: "Elegancia y performance.",
+      ctaPrincipal: { label: "Descubrir", href: "/modelos/santa-fe" }
+    },
+    {
+      imagen: "/carrousel/carrousel-5.jpg",
+      titulo: "Staria",
+      subtitulo: "Elegancia y performance.",
+      ctaPrincipal: { label: "Descubrir", href: "#ficha" }
+    }
+  ]
+}
+,
   modelos: [
     {
       nombre: "HB20",
@@ -143,8 +184,9 @@ const content: SiteContent = {
       ciudad: "CABA",
       telefono: " 11 4702 7200",
       whatsapp: "+ 54 9 11 2634 7413",
-      email: "ldilernia@wincarmotors.com.ar",
-      mapaEmbedUrl: ""
+      email: "info@wincarmotors.com.ar",
+      mapaEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.594819773701!2d-58.4654153!3d-34.5384921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a0e460272d%3A0xe3d3f1c4b34fabe8!2sAv.%20del%20Libertador%208400%2C%20C1429BNQ%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1764252479978!5m2!1ses!2sar",
+
     }
   ],
   horarios: {
@@ -155,10 +197,10 @@ const content: SiteContent = {
   contacto: {
     telefono: "11 4702 7200",
     whatsapp: " + 54 9 11 2634 7413",
-    email: "ldilernia@wincarmotors.com.ar",
+    email: "info@wincarmotors.com.ar",
     direccion: "Avenida Libertador 8400",
     ciudad: "CABA ",
-    formularioDestino: "info@internationalmotors.net",
+    formularioDestino: "info@wincarmotors.com.ar",
     politicaPrivacidadUrl: "#"
   },
   sociales: {

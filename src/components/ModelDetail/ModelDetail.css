@@ -238,3 +238,50 @@
     font-size: 2rem;
   }
 }
+/* ================================
+   MULTIMEDIA CON IMAGEN AL LADO
+   ================================ */
+
+/* ================================
+   MULTIMEDIA CON IMAGEN AL LADO
+   ================================ */
+
+/* ================================
+   MULTIMEDIA CON IMAGEN AL LADO
+   ================================ */
+
+.modeldetail-multimedia {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Mobile: texto arriba, foto abajo */
+.modeldetail-multimedia-img img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  object-fit: cover;
+}
+
+/* Tablet / Desktop: 
+   - la card Multimedia ocupa las 2 columnas del grid padre
+   - adentro: 50% texto / 50% foto
+*/
+@media (min-width: 768px) {
+  .modeldetail-grid-wide .modeldetail-multimedia {
+    grid-column: 1 / -1;              /* 👉 ocupa las dos columnas del grid */
+  }
+
+  .modeldetail-multimedia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;    /* 👉 mitad texto, mitad imagen */
+    align-items: stretch;
+    column-gap: 24px;
+  }
+
+  .modeldetail-multimedia-img img {
+    height: 100%;                     /* la imagen llena su mitad */
+  }
+}
+

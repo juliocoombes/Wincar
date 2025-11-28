@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { vehiculos, type Vehiculo } from "../../content/vehiculo";
-import "./ModelsGrid.css"; 
+import { vehiculos, type DetalleVehiculo } from "../../content/vehiculo";
+import "./ModelsGrid.css";
+
 export default function ModelsGrid() {
   return (
     <section id="modelos" className="section">
@@ -8,59 +9,74 @@ export default function ModelsGrid() {
         <h2>Modelos</h2>
 
         <div className="grid">
-          {vehiculos.map((m: Vehiculo) => (
-            <article key={m.id} className="card">
-              <Link
-                to={`/modelos/${m.id}`}
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <img
-                  src={m.links.imagenes[0] || "/car-placeholder.jpg"}
-                  alt={m.nombreComercial}
-                />
-                <h3>{m.nombreComercial}</h3>
-                <p>{/*m.resumenCorto*/}</p>
-              </Link>
+          {vehiculos.map((m: DetalleVehiculo) => {
+            const mainImg =
+              m.links?.imagenes && m.links.imagenes.length > 0
+                ? m.links.imagenes[0]
+                : "/car-placeholder.jpg";
 
-              <div className="meta">
-                {/* tomo el precio de la primera versión como “desde” */}
-                {m.versiones[0]?.precioLista ? (
-                  <span className="badge">
-                    Desde: {m.versiones[0].precioLista}
-                  </span>
-                ) : null}
+            const resumen =
+              m.presentacion && m.presentacion.length > 120
+                ? m.presentacion.slice(0, 120) + "..."
+                : m.presentacion;
 
-                {m.links.brochureUrl ? (
-                  <a
-                    className="badge"
-                    href={m.links.brochureUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={e => e.stopPropagation()}
-                  >
-                    Ficha técnica
-                  </a>
-                ) : null}
-              </div>
+            return (
+              <article key={m.id} className="card">
+                <Link
+                  to={`/modelos/${m.id}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <img src={mainImg} alt={m.nombre} />
 
-              <ul
-                style={{
-                  margin: "0 14px 14px 28px",
-                  color: "#444",
-                }}
-              >
-                {/* uso algunos bullets de la primera versión como destacados */}
-                {/*m.versiones[0]?.equipamientoClaves
-                  .slice(0, 4)
-                  .map((d, i) => (
-                    <li key={i}>{d}</li>
-                  ))*/}
-              </ul>
-            </article>
-          ))}
+                  <h3>{m.nombre}</h3>
+
+                  
+                </Link>
+
+                <div className="meta">
+                  {m.links?.brochureUrl ? (
+                    <a
+                      className="badge"
+                      href={m.links.brochureUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={e => e.stopPropagation()}
+                    >
+                      Ficha técnica
+                    </a>
+                  ) : null}
+
+                  {m.links?.videoUrl ? (
+                    <a
+                      className="badge"
+                      href={m.links.videoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={e => e.stopPropagation()}
+                    >
+                      Ver video
+                    </a>
+                  ) : null}
+                </div>
+
+                <ul
+                  style={{
+                    margin: "0 14px 14px 28px",
+                    color: "#444"
+                  }}
+                >
+                  {/* Si querés bullets, podés usar rendimiento o seguridad, ej.:
+
+                  m.rendimiento.slice(0, 3).map((r, i) => (
+                    <li key={i}>{r.nombre}</li>
+                  ))
+
+                  */}
+                </ul>
+              </article>
+            );
+          })}
         </div>
-
-        {/* si más adelante querés KPIs, los podés traer de otro archivo y agregarlos acá */}
       </div>
     </section>
   );

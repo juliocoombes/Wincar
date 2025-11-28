@@ -86,7 +86,7 @@ const content: SiteContent = {
   slides: [
     {
       imagen: "/carrousel/carrousel-3.jpg",
-      titulo: "Nuevo HB20",
+      titulo: "HB20",
       subtitulo: "Potencia, seguridad y tecnología.",
       ctaPrincipal: { label: "Descubrir", href: "/modelos/hb20" },
       ctaSecundaria: { label: "Contactanos", href: "#contacto" },
@@ -94,7 +94,7 @@ const content: SiteContent = {
     },
     {
       imagen: "/carrousel/carrousel-6.jpg",
-      titulo: "Hyundai Creta",
+      titulo: "Nueva Creta",
       subtitulo: "Conectividad total.",
       ctaPrincipal: { label: "Descubrir", href: "/modelos/creta" },
       imagenLateral: "/images/lado2.png"
@@ -107,7 +107,7 @@ const content: SiteContent = {
     },
     {
       imagen: "/carrousel/carrousel-2.jpg",
-      titulo: "Tucson Turbo",
+      titulo: "Nueva Tucson",
       subtitulo: "Elegancia y performance.",
       ctaPrincipal: { label: "Descubrir", href: "/modelos/creta" }
     },
@@ -190,8 +190,8 @@ const content: SiteContent = {
     }
   ],
   horarios: {
-    ventas: "Lunes a Viernes de 10hrs a 19hrs",
-    sabados: "Sabados de 10hrs a 14hrs",
+    ventas: "Lunes a Viernes de 10hrs a 19hrs - Sabados de 10hrs a 14hrs",
+    sabados: "",
     domingos: "Cerrado"
   },
   contacto: {

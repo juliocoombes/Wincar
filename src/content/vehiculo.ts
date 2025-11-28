@@ -3,347 +3,302 @@
 // Si un dato no aplica, dejalo en "" o [] según corresponda.
 
 export type Version = {
-  nombre: string // ej.: Comfort Plus MT / Platinum Safety AT
-  transmision: string // ej.: Manual 6 vel / Automática 6 vel
-  precioLista?: string // opcional, referencial
-  equipamientoClaves: string[] // bullets cortos por versión
-}
+  nombre: string; // ej.: Comfort Plus MT / Platinum Safety AT
+  transmision: string; // ej.: Manual 6 vel / Automática 6 vel
+  precioLista?: string; // opcional, referencial
+  equipamientoClaves: string[]; // bullets cortos por versión
+};
 
 export type Motor = {
-  denominacion: string // ej.: Gamma 1.6 16V DOHC D-CVVT
-  cilindrada_cc?: number // ej.: 1591
-  potencia_cv_rpm?: string // ej.: "123 @ 6.300 rpm"
-  torque_nm_rpm?: string // ej.: "152 @ 4.850 rpm"
-  combustible?: string // ej.: Nafta
-  traccion?: string // ej.: Delantera
-  normaEmisiones?: string // opcional
-}
+  denominacion: string; // ej.: Gamma 1.6 16V DOHC D-CVVT
+  cilindrada_cc?: number; // ej.: 1591
+  potencia_cv_rpm?: string; // ej.: "123 @ 6.300 rpm"
+  torque_nm_rpm?: string; // ej.: "152 @ 4.850 rpm"
+  combustible?: string; // ej.: Nafta
+  traccion?: string; // ej.: Delantera
+};
 
 export type Dimensiones = {
-  largo_mm?: number
-  ancho_mm?: number
-  alto_mm?: number
-  distanciaEntreEjes_mm?: number
-  despeje_mm?: number
-  baul_l?: number
-  tanque_l?: number
-  peso_kg?: number
-  neumaticos?: string // ej.: 185/60 R15
-  llantas?: string // ej.: Aleación 15"
-}
+  largo_mm?: number;
+  ancho_mm?: number;
+  alto_mm?: number;
+  distanciaEntreEjes_mm?: number;
+  despeje_mm?: number;
+  baul_l?: number;
+  tanque_l?: number;
+  peso_kg?: number;
+  neumaticos?: string; // ej.: 185/60 R15
+  llantas?: string; // ej.: Aleación 15"
+};
 
 export type SeguridadYADAS = {
-  airbags?: string // ej.: 6 (frontales, laterales y de cortina)
-  abs_ebd?: boolean
-  esc_tcs?: boolean
-  hac?: boolean // asistente de arranque en pendientes
-  ess?: boolean // luz de frenado de emergencia
-  camaraRetroceso?: boolean
-  sensoresEstacionamiento?: string // ej.: traseros / delanteros y traseros
-  isofix?: boolean
-  otras?: string[]
-}
+  airbags?: string; // ej.: 6 (frontales, laterales y de cortina)
+  abs_ebd?: boolean;
+  esc_tcs?: boolean;
+  hac?: boolean; // asistente de arranque en pendientes
+  ess?: boolean; // luz de frenado de emergencia
+  camaraRetroceso?: boolean;
+  sensoresEstacionamiento?: string; // ej.: traseros / delanteros y traseros
+  isofix?: boolean;
+  otras?: string[];
+};
 
 export type ConfortYTecnologia = {
-  accesoSinLlave?: boolean
-  botonStartStop?: boolean
-  climatizacion?: string // ej.: Aire acondicionado / Climatizador automático
-  direccion?: string // ej.: Asistida eléctricamente
-  levantavidrios?: string // ej.: 4 eléctricos con one touch
-  espejos?: string // ej.: Eléctricos con luz de giro
-  tapizados?: string // ej.: Tela / Cuero sintético
-  volante?: string // ej.: Regulable en altura/profundidad, multifunción
-  otras?: string[]
-}
+  accesoSinLlave?: boolean;
+  botonStartStop?: boolean;
+  climatizacion?: string; // ej.: Aire acondicionado / Climatizador automático
+  direccion?: string; // ej.: Asistida eléctricamente
+  levantavidrios?: string; // ej.: 4 eléctricos con one touch
+  espejos?: string; // ej.: Eléctricos con luz de giro
+  tapizados?: string; // ej.: Tela / Cuero sintético
+  volante?: string; // ej.: Regulable en altura/profundidad, multifunción
+  otras?: string[];
+};
 
 export type Multimedia = {
-  pantalla?: string // ej.: 8"
-  conectividad?: string[] // ej.: ["Apple CarPlay", "Android Auto", "Bluetooth", "USB"]
-  parlantes?: number
-  puertos?: string[] // ej.: ["USB delantera", "USB trasera", "12V"]
-  camara?: string // ej.: Cámara de retroceso con líneas auxiliares
-}
+  pantalla?: string; // ej.: 8"
+  conectividad?: string[]; // ej.: ["Apple CarPlay", "Android Auto", "Bluetooth", "USB"]
+  parlantes?: number;
+  puertos?: string[]; // ej.: ["USB delantera", "USB trasera", "12V"]
+  camara?: string; // ej.: Cámara de retroceso con líneas auxiliares
+};
 
 export type Colores = {
-  exteriores: string[] // ej.: Blanco Atlas, Plata Brisk, Gris Silk, Negro Onix, etc.
-  interiores?: string[] // ej.: Negro/tela
-}
+  exteriores: string[]; // ej.: Blanco Atlas, Plata Brisk, Gris Silk, Negro Onix, etc.
+  interiores?: string[]; // ej.: Negro/tela
+};
 
 export type GarantiaYOrigen = {
-  garantia?: string // ej.: 3 años o 100.000 km
-  origen?: string // ej.: Brasil
-  servicio?: string // Planes de mantenimiento / intervalos
-}
+  garantia?: string; // ej.: 3 años o 100.000 km
+  servicio?: string; // Planes de mantenimiento / intervalos
+};
 
 export type LinksYMedios = {
-  brochureUrl?: string // PDF oficial
-  imagenes: string[] // rutas a /public o URLs
-  videoUrl?: string // YouTube u otro
+  brochureUrl?: string; // PDF oficial
+  imagenes: string[]; // rutas a /public o URLs
+  videoUrl?: string; // YouTube u otro
+};
+
+export interface DetalleVehiculo {
+  id: string;
+
+  nombre: string;
+  presentacion: string;
+
+  seguridad: Array<{
+    nombre: string;
+    descripcion: string;
+  }>;
+
+  conectividad: Array<{
+    nombre: string;
+    descripcion: string;
+  }>;
+
+  rendimiento: Array<{
+    nombre: string;
+    descripcion: string;
+  }>;
+
+  colores?: {
+    exteriores: string[];
+    interiores?: string[];
+  };
+
+  garantia?: {
+    garantia: string;
+    servicio: string;
+  };
+
+  links?: {
+    brochureUrl?: string;
+    imagenes?: string[];
+    videoUrl?: string;
+  };
 }
 
-export type Vehiculo = {
-  id: string // slug único, ej.: "hb20s"
-  nombreComercial: string // ej.: HB20S
-  eslogan?: string // frase corta de marketing
-  resumenCorto: string // 1–2 líneas intro
-  versiones: Version[]
-  motor: Motor
-  dimensiones: Dimensiones
-  seguridad: SeguridadYADAS
-  confort: ConfortYTecnologia
-  multimedia: Multimedia
-  colores: Colores
-  garantia: GarantiaYOrigen
-  links: LinksYMedios
-}
-
-// ===================
-// EJEMPLO A COMPLETAR
 // ===================
 // HB20 HATCH
-const hb20: Vehiculo = {
+// ===================
+const hb20: DetalleVehiculo = {
   id: "hb20",
-  nombreComercial: "HB20",
-  eslogan: "Lo cotidiano puede volverse extraordinario.",
-  resumenCorto:
-    "Hatchback del segmento B ideal para todos los días, con espíritu deportivo, gran conectividad y un completo paquete de seguridad para uso urbano y periurbano.",
+  nombre: "HB20",
 
-  versiones: [
+  presentacion:
+    "Lo cotidiano puede transformarse en extraordinario con el HB20 Hatchback. Sentí su espíritu deportivo, su avanzada tecnología y el nivel de seguridad que marca el camino hacia el futuro.",
+
+  seguridad: [
     {
-      nombre: "Comfort Plus MT",
-      transmision: "Manual 6 vel",
-      precioLista: "Consultar",
-      equipamientoClaves: [
-        "Motor 1.6 123 CV",
-        "Control de estabilidad y tracción",
-        "Pantalla táctil 8\" con Android Auto/Apple CarPlay"
-      ]
+      nombre: "Airbags",
+      descripcion:
+        "6 airbags. 2 frontales, 2 laterales y 2 de cortina que brindan máxima seguridad para todos los ocupantes."
     },
     {
-      nombre: "Platinum Safety AT",
-      transmision: "Automática 6 vel",
-      precioLista: "Consultar",
-      equipamientoClaves: [
-        "6 airbags",
-        "Cámara de retroceso con guías",
-        "Control de velocidad crucero con limitador"
-      ]
+      nombre: "Asistente de punto ciego (BCA)",
+      descripcion:
+        "Sistema de sensores que detecta vehículos fuera de tu vista lateral y te alerta para evitar colisiones"
+    },
+    {
+      nombre:
+        "Asistente y mantenimiento de carril (LKA) y Asistente de centrado de carril (LFA)",
+      descripcion:
+        "Sistema LKA que corrige suavemente la dirección si el vehículo se desvía sin señalizar. El sistema LFA mantiene el vehículo centrado dentro del carril de forma continua."
+    },
+    {
+      nombre: "Alerta y frenado autónomo (FCA)",
+      descripcion:
+        "Sistema que detecta riesgo inminente de colision con vehículos, peatones o ciclistas y emite una alerta y si no detecta una reacción, frena automáticamente para evitar o reducir el impacto."
     }
   ],
 
-  motor: {
-    denominacion: "Gamma 1.6 16V DOHC D-CVVT",
-    cilindrada_cc: 1591,
-    potencia_cv_rpm: "123 @ 6.300 rpm",
-    torque_nm_rpm: "152 @ 4.850 rpm",
-    combustible: "Nafta",
-    traccion: "Delantera",
-    normaEmisiones: "Euro 5 aprox."
-  },
+  conectividad: [
+    {
+      nombre: "Pantalla táctil de 8\"",
+      descripcion:
+        " La pantalla táctil de infoentretenimiento de 8” está ubicada estratégicamente para ofrecer al conductor y al acompañante un acceso cómodo y sencillo a la navegación y a las funciones de conectividad. Compatible con Android Auto y AppleCarPlay"
+    },
+    {
+      nombre: "Bluetooth y USB",
+      descripcion:
+        "Conectividad completa para llamadas, música y carga de dispositivos. Incluye cargador inalambrico"
+    },
+    {
+      nombre: "Cámara de retroceso",
+      descripcion:
+        "Proporciona asistencia visual al estacionar o maniobrar en espacios reducidos."
+    }
+  ],
 
-  dimensiones: {
-    largo_mm: 4015,
-    ancho_mm: 1720,
-    alto_mm: 1470,
-    distanciaEntreEjes_mm: 2530,
-    despeje_mm: 160,
-    baul_l: 300,
-    tanque_l: 50,
-    peso_kg: 1056,
-    neumaticos: "185/60 R15",
-    llantas: "Aleación 15\""
-  },
-
-  seguridad: {
-    airbags: "6 (frontales, laterales y de cortina)",
-    abs_ebd: true,
-    esc_tcs: true,
-    hac: true,
-    ess: true,
-    camaraRetroceso: true,
-    sensoresEstacionamiento: "Traseros",
-    isofix: true,
-    otras: [
-      "Control de estabilidad (ESP)",
-      "Control de tracción (TCS)",
-      "Asistente de arranque en pendiente (HAC)",
-      "Monitor de presión de neumáticos",
-      "Alerta y frenado autónomo (FCA)",
-      "Asistente de mantenimiento y centrado de carril (LKA/LFA)",
-      "Asistente de punto ciego (BCA)"
-    ]
-  },
-
-  confort: {
-    accesoSinLlave: true,
-    botonStartStop: true,
-    climatizacion: "Aire acondicionado manual",
-    direccion: "Asistida eléctricamente (MDPS)",
-    levantavidrios: "4 eléctricos (one-touch conductor)",
-    espejos: "Eléctricos con luz de giro",
-    tapizados: "Tela bicolor",
-    volante: "Regulable en altura y profundidad, multifunción",
-    otras: [
-      "Control de velocidad crucero con limitador",
-      "Asiento trasero rebatible 60/40",
-      "Computadora de a bordo",
-      "Cargador inalámbrico de smartphone (según versión)"
-    ]
-  },
-
-  multimedia: {
-    pantalla: "8\" táctil",
-    conectividad: ["Apple CarPlay", "Android Auto", "Bluetooth", "USB"],
-    parlantes: 4,
-    puertos: ["USB delantero", "Toma 12V"],
-    camara: "Retroceso"
-  },
+  rendimiento: [
+    {
+      nombre: "Motor 1.6L",
+      descripcion:
+        "123 CV de potencia y torque de 152 Nm, con excelente equilibrio entre respuesta y consumo. Version manual y automática con caja de 6 velocidades."
+    },
+    {
+      nombre: "Levas de cambio al volante",
+      descripcion:
+        "Las levas de cambio al volante te permiten tener una experiencia deportiva y tecnológica mientras manejas."
+    },
+    {
+      nombre: "Control de velocidad crucero",
+      descripcion:
+        " El control de velocidad crucero con limitador permite mantener una velocidad constante sin usar el acelerador y fijar un límite máximo para evitar exceder la velocidad deseada."
+    }
+  ],
 
   colores: {
-    exteriores: ["Blanco", "Plata", "Gris", "Negro"],
+    exteriores: [
+      "Corona Blue Pearl",
+      "Micro Grey",
+      "Shadow Grey",
+      "Shimmering Silver Metalic",
+      "Atlas White",
+      "Lencois Beige Metalic",
+      "Ebony Black"
+    ],
     interiores: ["Negro/Tela"]
   },
 
   garantia: {
-    garantia: "Consultar según mercado (3 a 5 años / 100.000 km aprox.)",
-    origen: "Brasil",
+    garantia: "3 años o 100.000 km",
     servicio: "Mantenimiento cada 10.000 km o 12 meses"
   },
 
- links: {
-  brochureUrl:
-    "https://www.hyundai.com.ar/publicfiles/datasheets/hb20fichatecnica-final_compressed_1732281228.pdf",
-  imagenes: [
-    "/hb20h/hb20h-4.jpg",
-    "/hb20h/hb20h-1.jpg",
-    "/hb20h/hb20h-3.jpg",
-    "/hb20h/hb20h-2.jpeg",
-    "/hb20h/hb20h-5.jpg"
-  ],
-  videoUrl: "https://www.youtube.com/watch?v=23hJMspQP4s"
-}
-
+  links: {
+    brochureUrl:
+      "https://www.hyundai.com.ar/publicfiles/datasheets/hb20fichatecnica-final_compressed_1732281228.pdf",
+    imagenes: [
+      "/hb20h/hb20h-4.jpg",
+      "/hb20h/hb20h-1.jpg",
+      "/hb20h/hb20h-3.jpg",
+      "/hb20h/hb20h-2.jpeg",
+      "/hb20h/hb20h-5.jpg"
+    ],
+    videoUrl: "https://www.youtube.com/watch?v=23hJMspQP4s"
+  }
 };
-const hb20s: Vehiculo = {
-  id: "hb20s",
-  nombreComercial: "HB20S Sedán",
-  eslogan: "Elegancia, innovación y confianza en cada kilómetro.",
-  resumenCorto:
-    "Sedán compacto pensado para el día a día, con gran espacio interior, equipamiento de seguridad de última generación y confort de marcha ideal para ciudad y ruta.",
 
-  versiones: [
+// HB20S
+const hb20s: DetalleVehiculo = {
+  id: "hb20s",
+
+  nombre: "HB20s",
+  presentacion:
+    "Elegancia, innovación y confianza en cada kilómetro. El HB20S Sedán 2025 redefine tu manera de conducir con estilo y la seguridad que necesitás.",
+
+  seguridad: [
     {
-      nombre: "Comfort Plus MT",
-      transmision: "Manual 6 vel",
-      precioLista: "Consultar",
-      equipamientoClaves: [
-        "Motor 1.6 123 CV",
-        "Control de estabilidad y tracción",
-        "6 airbags",
-        "Pantalla táctil 8\" con Android Auto / Apple CarPlay"
-      ]
+      nombre: "Control de estabilidad (ESP)",
+      descripcion:
+        "El Control de Estabilidad (ESP) ayuda a mantener el control del vehículo en maniobras bruscas o curvas, ajustando automáticamente frenos y potencia para evitar derrapes."
     },
     {
-      nombre: "Platinum Safety AT",
-      transmision: "Automática 6 vel",
-      precioLista: "Consultar",
-      equipamientoClaves: [
-        "Control de velocidad crucero con limitador",
-        "Asistente de mantenimiento de carril",
-        "Cámara de retroceso con líneas guía",
-        "Cargador inalámbrico de smartphone"
-      ]
+      nombre: "Asistente de Tráfico Cruzado con Anticolisión (RCCA)",
+      descripcion:
+        "Sistema que detecta objetos que se aproximan por los laterales al retroceder, enviando alertas al conductor y frenando automáticamente si no detecta reacción"
+    },
+    {
+      nombre: "Asistente de frenado en pendientes (HAC)",
+      descripcion:
+        "El Asistente de Frenado en Pendientes (HAC) evita que el vehículo retroceda al soltar el freno en una subida, manteniendo la presión de frenado por unos segundos para un arranque seguro."
+    },
+    {
+      nombre: "Freno con ABS con EBD",
+      descripcion:
+        "Mejora la capacidad de frenado en situaciones de emergencia. El sistema EBD distribuye la fuerza de frenado entre las ruedas, evitando el bloqueo y optimizando la distancia de detencion."
     }
   ],
 
-  motor: {
-    denominacion: "Gamma 1.6 16V DOHC D-CVVT",
-    cilindrada_cc: 1591,
-    potencia_cv_rpm: "123 @ 6.300 rpm",
-    torque_nm_rpm: "155 @ 4.850 rpm",
-    combustible: "Nafta",
-    traccion: "Delantera",
-    normaEmisiones: "Euro 5 aprox."
-  },
+  conectividad: [
+    {
+      nombre: "Cluster totalmente digital",
+      descripcion:
+        "Los graficos en el grupo digital se adaptan a la nueva tecnología moderna"
+    },
+    {
+      nombre: "Llave inteligente",
+      descripcion:
+        "Podras disfrutar de la comodidad de desbloquear el vehiculo a distancia, sin necesidad de colocar la llave"
+    },
+    {
+      nombre: "Cargador inalámbrico",
+      descripcion:
+        "Cuenta con una bandeja para cargador inalámbrico de alta velocidad. Además, posee una función de enfriamiento que evita el sobrecalentamiento del teléfono"
+    },
+    {
+      nombre: "Control de velocidad crucero",
+      descripcion:
+        " El control de velocidad crucero con limitador permite mantener una velocidad constante sin usar el acelerador y fijar un límite máximo para evitar exceder la velocidad deseada.\n"
+    }
+  ],
 
-  dimensiones: {
-    // Valores aproximados, podés ajustarlos según ficha oficial
-    largo_mm: 4270,
-    ancho_mm: 1720,
-    alto_mm: 1470,
-    distanciaEntreEjes_mm: 2530,
-    despeje_mm: 160,
-    baul_l: 475,
-    tanque_l: 50,
-    peso_kg: 1100,
-    neumaticos: "185/60 R15",
-    llantas: "Aleación 15\""
-  },
-
-  seguridad: {
-    airbags: "6 (frontales, laterales y de cortina)",
-    abs_ebd: true,
-    esc_tcs: true,
-    hac: true,
-    ess: true,
-    camaraRetroceso: true,
-    sensoresEstacionamiento: "Traseros",
-    isofix: true,
-    otras: [
-      // Textos que ya tenías:
-      "Control de estabilidad (ESP): ayuda a mantener el control del vehículo en maniobras bruscas o curvas, ajustando frenos y potencia para evitar derrapes.",
-      "Control de tracción (TCS).",
-      "Frenos ABS con EBD: distribuye la fuerza de frenado entre las ruedas, evitando el bloqueo y optimizando la distancia de detención.",
-      "Asistente de arranque en pendiente (HAC): evita que el vehículo retroceda al soltar el freno en una subida.",
-      "Monitor de presión de neumáticos.",
-      "Asistente de Tráfico Cruzado con Anticolisión (RCCA).",
-      "Alerta y frenado autónomo de emergencia (FCA).",
-      "Asistente de mantenimiento y centrado de carril (LKA/LFA).",
-      "Asistente de punto ciego (BCA)."
-    ]
-  },
-
-  confort: {
-    accesoSinLlave: true,
-    botonStartStop: true,
-    climatizacion: "Aire acondicionado manual",
-    direccion: "Asistida eléctricamente (MDPS)",
-    levantavidrios: "4 eléctricos (one-touch conductor)",
-    espejos: "Eléctricos con luz de giro",
-    tapizados: "Tela bicolor",
-    volante: "Regulable en altura y profundidad, multifunción",
-    otras: [
-      "Control de velocidad crucero con limitador: permite mantener una velocidad constante sin usar el acelerador y fijar un límite máximo.",
-      "Asiento trasero rebatible 60/40.",
-      "Computadora de a bordo.",
-      "Llave inteligente para apertura y cierre sin necesidad de insertar la llave.",
-      "Cluster totalmente digital con gráficos modernos y fáciles de leer."
-    ]
-  },
-
-  multimedia: {
-    pantalla: "8\" táctil",
-    conectividad: [
-      "Apple CarPlay",
-      "Android Auto",
-      "Bluetooth",
-      "USB"
-    ],
-    parlantes: 4,
-    puertos: ["USB delantero", "Toma 12V"],
-    camara: "Retroceso",
-    // integro el cargador inalámbrico acá también como plus tecnológico
-    // (aunque ya lo mencionamos en confort, no molesta repetir para marketing)
-  },
-
+  rendimiento: [
+    {
+      nombre: "Motor 1.6L",
+      descripcion:
+        "123 CV de potencia y torque de 155 Nm, con excelente equilibrio entre respuesta y consumo. Version manual y automática con caja de 6 velocidades."
+    },
+    {
+      nombre: "Levas de cambio al volante",
+      descripcion:
+        "Las levas de cambio al volante te permiten tener una experiencia deportiva y tecnológica mientras manejas."
+    }
+  ],
   colores: {
-    exteriores: ["Blanco", "Plata", "Gris", "Negro"],
+    exteriores: [
+      "Corona Blue Pearl",
+      "Micro Grey",
+      "Shadow Grey",
+      "Shimmering Silver Metalic",
+      "Atlas White",
+      "Lencois Beige Metalic",
+      "Ebony Black"
+    ],
     interiores: ["Negro/Tela"]
   },
-
-  garantia: {
-    garantia: "Consultar según mercado (3 a 5 años / 100.000 km aprox.)",
-    origen: "Brasil",
+   garantia: {
+    garantia: "3 años o 100.000 km",
     servicio: "Mantenimiento cada 10.000 km o 12 meses"
   },
 
@@ -354,514 +309,415 @@ const hb20s: Vehiculo = {
       "/hb20/hb20-1.jpg",
       "/hb20/hb20-2.jpg",
       "/hb20/hb20-3.jpg",
-      "/hb20/hb20-4.jpg",
-    
+      "/hb20/hb20-4.jpg"
     ],
-    videoUrl: "https://www.youtube.com/watch?v=23hJMspQP4s"
+    videoUrl: "https://www.youtube.com/watch?v=FaVtVAIRu_Q"
   }
 };
 
-
-
 // NUEVA CRETA
-const creta: Vehiculo = {
+const creta: DetalleVehiculo = {
   id: "creta",
-  nombreComercial: "Nueva Creta",
-  eslogan: "Diseño audaz, innovación y confort en cada viaje.",
-  resumenCorto:
-    "SUV compacta del segmento B-SUV, con diseño moderno, motor eficiente 1.5 Smartstream, alto nivel de seguridad activa y conectividad avanzada, pensada para familias jóvenes y uso mixto ciudad/ruta.",
 
-  versiones: [
+  nombre: "Nueva Creta",
+  presentacion:
+    "La Nueva Creta impone su estilo entre las SUV compactas, con un diseño audaz, innovación tecnológica, máximo confort y la seguridad que te acompañan en cada viaje.",
+
+  seguridad: [
     {
-      nombre: "Premium IVT",
-      transmision: "Automática IVT 8 marchas simuladas",
-      precioLista: "Consultar",
-      equipamientoClaves: [
-        "Motor Smartstream G 1.5 115 CV",
-        "Paquete Hyundai SmartSense (FCA, LKA, SCC*)",
-        "Pantallas dobles 10,25\" integradas (*según versión/mercado)"
-      ]
+      nombre: "Indicador de atención al conductor (DAW)",
+      descripcion:
+        "El indicador de atención al conductor monitorea los patrones de manejo, detectando signos de fatiga o distracción y emitiendo una alerta que recomienda tomar un descanso para mantener una conducción segura"
     },
     {
-      nombre: "Safety IVT",
-      transmision: "Automática IVT",
-      precioLista: "Consultar",
-      equipamientoClaves: [
-        "6 airbags",
-        "Cámara de retroceso",
-        "Climatizador automático digital de dos zonas"
-      ]
+      nombre: "Control de crucero inteligente (SCC)",
+      descripcion:
+        "Una función que mantiene una distancia segura con el vehiculo de adelante, ajustando automáticamente la velocidad"
+    },
+    {
+      nombre: "Asistente de luces altas (HBA)",
+      descripcion:
+        "El Asistente de luces altas (HBA) detecta vehículos que se aproximan en la dirección contraria o circulando por delante, ajustando automáticamente la intensidad de las luces, evitando deslumbramientos y mejorando la visibilidad"
+    },
+    {
+      nombre: "Programa electrónico de estabilidad (ESP)",
+      descripcion:
+        "Esta funcion ayuda a mantener el control del vehiculo, aplicando freno selectivo y ajustando la potencia del motor ante maniobras bruscas o superficies resbaladizas"
     }
   ],
 
-  motor: {
-    denominacion: "Smartstream G 1.5 16V DOHC D-CVVT",
-    cilindrada_cc: 1497,
-    potencia_cv_rpm: "115 @ 6.300 rpm",
-    torque_nm_rpm: "144 @ 4.500 rpm",
-    combustible: "Nafta",
-    traccion: "Delantera",
-    normaEmisiones: "Euro 6 aprox."
-  },
-
-  dimensiones: {
-    largo_mm: 4300,
-    ancho_mm: 1790,
-    alto_mm: 1635,
-    distanciaEntreEjes_mm: 2610,
-    despeje_mm: 190,
-    baul_l: 422,
-    tanque_l: 50,
-    peso_kg: 1270,
-    neumaticos: "215/60 R17",
-    llantas: "Aleación bitono 17\""
-  },
-
-  seguridad: {
-    airbags: "6 (frontales, laterales y de cortina)",
-    abs_ebd: true,
-    esc_tcs: true,
-    hac: true,
-    ess: true,
-    camaraRetroceso: true,
-    sensoresEstacionamiento: "Traseros",
-    isofix: true,
-    otras: [
-      "Programa electrónico de estabilidad (ESP)",
-      "Asistente de arranque en pendientes (HAC)",
-      "Asistente de colisión frontal (FCA)",
-      "Control de crucero inteligente (SCC)",
-      "Asistente de luces altas (HBA)",
-      "Indicador de atención al conductor (DAW)"
-    ]
-  },
-
-  confort: {
-    accesoSinLlave: true,
-    botonStartStop: true,
-    climatizacion: "Climatizador automático digital de dos zonas",
-    direccion: "Asistida eléctricamente (MDPS)",
-    levantavidrios: "4 eléctricos (one-touch delante)",
-    espejos: "Eléctricos y rebatibles con luz de giro",
-    tapizados: "Tela de alta calidad o cuero sintético (según versión)",
-    volante: "Regulable en altura y profundidad, multifunción",
-    otras: [
-      "Control de velocidad crucero",
-      "Asiento trasero rebatible 60/40",
-      "Apoyabrazos central",
-      "Cargador inalámbrico de smartphone"
-    ]
-  },
-
-  multimedia: {
-    pantalla: "10,25\" táctil + clúster digital 10,25\"",
-    conectividad: ["Apple CarPlay", "Android Auto", "Bluetooth", "USB"],
-    parlantes: 6,
-    puertos: ["USB delanteros", "USB traseros", "Toma 12V"],
-    camara: "Retroceso"
-  },
-
-  colores: {
-    exteriores: ["Blanco", "Plata", "Gris", "Azul", "Negro"],
-    interiores: ["Negro/Tela", "Negro/Cuero sintético"]
-  },
-
-  garantia: {
-    garantia: "Consultar según mercado (3 a 5 años / 100.000 km aprox.)",
-    origen: "Corea / Brasil (según mercado)",
-    servicio: "Mantenimiento cada 10.000 km o 12 meses"
-  },
-
- links: {
-  brochureUrl:
-    "https://www.hyundai.com.ar/publicfiles/datasheets/fichatecnicaall-newcreta_1736781247.pdf",
-  imagenes: [
-    "/creta/creta-1.jpg",
-    "/creta/creta-2.jpg",
-    "/creta/creta-3.jpg",
-    "/creta/creta-4.jpg",
-    "/creta/creta-5.jpg",
-    "/creta/creta-6.jpg",
-    "/creta/creta-7.jpg"
-  ],
-  videoUrl: "https://www.youtube.com/watch?v=6q1Qaq6ZqLk"
-}
-};
-
-// NUEVA TUCSON
-const tucson: Vehiculo = {
-  id: "tucson",
-  nombreComercial: "Nueva Tucson",
-  eslogan: "Tecnología superior y estilo impactante.",
-  resumenCorto:
-    "SUV del segmento C con diseño imponente, amplio interior y avanzada tecnología de seguridad y conectividad. Ideal para familias que buscan confort, seguridad y prestaciones para viajes largos.",
-
-  versiones: [
+  conectividad: [
     {
-      nombre: "GL 2.0 AT 4x2",
-      transmision: "Automática 6 vel",
-      precioLista: "Consultar",
-      equipamientoClaves: [
-        "Motor Smartstream G 2.0 154 CV",
-        "Control de estabilidad y múltiples ADAS",
-        "Pantalla táctil 8–12,3\" con cámara de retroceso"
-      ]
+      nombre: "Central multimedia integrada al panel de instrumentos",
+      descripcion:
+        "Panel instrumentos digital y a color de 10.25” integrado a la central multimedia, de igual tamaño, compatible con Apple CarPlay y Android Auto"
     },
     {
-      nombre: "Limited Safety 2.0 AT 4x4",
-      transmision: "Automática 6 vel",
-      precioLista: "Consultar",
-      equipamientoClaves: [
-        "Tracción 4x4 (según versión)",
-        "Asistente de colisión frontal (FCA) y punto ciego (BCA)",
-        "Sensores de estacionamiento delanteros y traseros"
-      ]
+      nombre: "Aire acondicionado automatico digital de dos zonas",
+      descripcion:
+        "Disfruta el confort de un clima perfecto con control digital e independiente para el conductor y pasajero delantero"
+    },
+    {
+      nombre: "Volante con comandos interactivos",
+      descripcion:
+        "Permite controlar la central multimedia, la información del panel y configurar el piloto automatico adaptativo sin generar distracciones"
+    },
+    {
+      nombre: "Sistema de audio premium",
+      descripcion:
+        "Sistema de audio envolvente con altavoces de alta fidelidad, diseñado para ofrecer una experiencia sonora de máxima calidad a todos los pasajeros"
     }
   ],
 
-  motor: {
-    denominacion: "Smartstream G 2.0 MPI",
-    cilindrada_cc: 1999,
-    potencia_cv_rpm: "154 @ 6.200 rpm",
-    torque_nm_rpm: "192 @ 4.500 rpm",
-    combustible: "Nafta",
-    traccion: "Delantera (4WD según versión/mercado)",
-    normaEmisiones: "Euro 6 aprox."
-  },
-
-  dimensiones: {
-    largo_mm: 4630,
-    ancho_mm: 1865,
-    alto_mm: 1665,
-    distanciaEntreEjes_mm: 2755,
-    despeje_mm: 170,
-    baul_l: 539,
-    tanque_l: 54,
-    peso_kg: 1500,
-    neumaticos: "235/55 R18",
-    llantas: "Aleación 18\" bitono"
-  },
-
-  seguridad: {
-    airbags: "6 (frontales, laterales y de cortina)",
-    abs_ebd: true,
-    esc_tcs: true,
-    hac: true,
-    ess: true,
-    camaraRetroceso: true,
-    sensoresEstacionamiento: "Delanteros y traseros",
-    isofix: true,
-    otras: [
-      "Programa electrónico de estabilidad (ESP)",
-      "Asistente de colisión frontal (FCA)",
-      "Asistente de mantenimiento y seguimiento de carril (LKA/LFA)",
-      "Asistente de anticolisión trasera en punto ciego (BCA/RCCA)",
-      "Asistente de descenso en pendientes (DBC)",
-      "Monitor de presión de neumáticos (TPMS)"
-    ]
-  },
-
-  confort: {
-    accesoSinLlave: true,
-    botonStartStop: true,
-    climatizacion: "Climatizador automático bi-zona",
-    direccion: "Asistida eléctricamente",
-    levantavidrios: "4 eléctricos (one-touch delante)",
-    espejos: "Eléctricos, rebatibles, con luz de giro",
-    tapizados: "Tela o cuero (según versión)",
-    volante: "Regulable en altura y profundidad, multifunción",
-    otras: [
-      "Control de velocidad crucero",
-      "Modos de conducción (Normal/Eco/Sport)",
-      "Asientos delanteros calefaccionados (según versión)",
-      "Apoyabrazos central y múltiples portaobjetos"
-    ]
-  },
-
-  multimedia: {
-    pantalla: "8\" o 12,3\" (según versión)",
-    conectividad: ["Apple CarPlay", "Android Auto", "Bluetooth", "USB"],
-    parlantes: 6,
-    puertos: ["USB delanteros", "USB traseros", "Toma 12V"],
-    camara: "Retroceso"
-  },
-
+  rendimiento: [
+    {
+      nombre: "Motor Smartstream G 1.5",
+      descripcion:
+        "Equilibra al máximo potencia y eficiencia. Respuesta ágil mediante un bajo consumo, haciéndola ideal para el uso cotidiano"
+    },
+    {
+      nombre: "Dirección asistida eléctricamente",
+      descripcion:
+        "Confort y precisión en cada trayecto: la dirección adapta su asistencia a la velocidad, brindando maniobras suaves en ciudad y firmeza en ruta."
+    },
+    {
+      nombre: "Suspensión reforzada",
+      descripcion:
+        "Estabilidad y máximo confort en todo tipo de caminos. "
+    }
+  ],
   colores: {
-    exteriores: ["Blanco", "Plata", "Gris", "Azul", "Rojo", "Negro"],
-    interiores: ["Negro/Tela", "Negro/Cuero"]
+    exteriores: [
+      "Corona Blue Pearl",
+      "Micro Grey",
+      "Shadow Grey",
+      "Shimmering Silver Metalic",
+      "Atlas White",
+      "Lencois Beige Metalic",
+      "Ebony Black"
+    ],
+    interiores: ["Negro/Tela"]
   },
-
-  garantia: {
-    garantia: "Consultar según mercado (3 a 5 años / 100.000 km aprox.)",
-    origen: "Corea / otros orígenes según país",
+   garantia: {
+    garantia: "3 años o 100.000 km",
     servicio: "Mantenimiento cada 10.000 km o 12 meses"
   },
 
   links: {
-  brochureUrl:
-    "https://www.hyundai.com.ec/static/media/nuevo-tucson-ficha-tecnica.8ea68457.pdf",
-  imagenes: [
-    "/tucson/tucson-1.jpg",
-    "/tucson/tucson-2.jpg",
-    "/tucson/tucson-3.jpg",
-    "/tucson/tucson-4.jpg",
-    "/tucson/tucson-5.jpg",
-    "/tucson/tucson-6.jpg",
-    "/tucson/tucson-7.jpg",
-    "/tucson/tucson-8.jpg"
-  ],
-  videoUrl: "https://www.youtube.com/watch?v=Dmgn7zpVsms"
-}
-
+    brochureUrl:
+      "https://www.hyundai.com.ar/publicfiles/datasheets/fichatecnicaall-newcreta_1736781247.pdf",
+    imagenes: [
+      "/creta/creta-1.jpg",
+      "/creta/creta-2.jpg",
+      "/creta/creta-3.jpg",
+      "/creta/creta-4.jpg",
+      "/creta/creta-5.jpg",
+      "/creta/creta-6.jpg",
+      "/creta/creta-7.jpg"
+    ],
+    videoUrl: "https://www.youtube.com/watch?v=6q1Qaq6ZqLk"
+  }
 };
 
-// NUEVA SANTA FE
-const santaFe: Vehiculo = {
-  id: "santa-fe",
-  nombreComercial: "Nueva Santa Fe",
-  eslogan: "Descubrí el mundo a tu ritmo.",
-  resumenCorto:
-    "SUV grande de 7 plazas que combina diseño robusto, enorme espacio interior y tecnología inteligente. Pensada para familias que viajan mucho, con alto nivel de confort, seguridad ADAS y gran capacidad de carga (hasta ~725 L).",
+// NUEVA TUCSON
+const tucson: DetalleVehiculo = {
+  id: "tucson",
 
-  versiones: [
+  nombre: "Nueva Tucson",
+  presentacion:
+    "La Nueva Tucson inaugura una nueva era de conducción. Supera lo convencional y redefine su segmento con un diseno imponente, interior amplio y versátil, y la tecnología que siempre esperaste",
+
+  seguridad: [
     {
-      nombre: "2.5 T-GDI 4WD",
-      transmision: "Automática DCT 8 vel",
-      precioLista: "Consultar",
-      equipamientoClaves: [
-        "Motor 2.5 Turbo GDI 281 CV",
-        "Tracción 4WD con modos Terrain",
-        "Pantalla curva panorámica 12,3\" + 12,3\""
-      ]
+      nombre:
+        "Control de crucero inteligente con stop & go (SCC)",
+      descripcion:
+        "El Control de crucero inteligente con stop & go (SCC) ayuda a mantener la distancia con el vehiculo delantero y conducir a una distancia establecida por el conductor. Se detiene automáticamente cuando el vehiculo delantero se detiene y arranca automáticamente cuando el vehiculo delantero sale."
     },
     {
-      nombre: "2.5 T-GDI 4WD Full Safety",
-      transmision: "Automática DCT 8 vel",
-      precioLista: "Consultar",
-      equipamientoClaves: [
-        "Paquete completo Hyundai SmartSense",
-        "Cámaras 360° y monitor de punto ciego (BVM)",
-        "7 plazas con máximo confort y techo solar panorámico"
-      ]
+      nombre: "Sistema de control de estabilidad",
+      descripcion:
+        "El Sistema de control de estabilidad actúa ante fuertes vientos cruzados, corrigiendo la trayectoria para mantener la dirección y asegurar la estabilidad del vehiculo."
+    },
+    {
+      nombre: "Sensores de estacionamiento",
+      descripcion:
+        "Sensores ultrasónicos delanteros y traseros que detectan objetos, emitiendo sonidos para indicar distancia y evitar colisiones"
+    },
+    {
+      nombre: "Asistente de colision frontal (FCA)",
+      descripcion:
+        "Este sistema alerta al conductor si el vehículo de adelante esta reduciendo de manera brusca la velocidad o si existe la posibilidad de una colisión frontal, activando los frenos en caso de colisión inminente. También frena automáticamente ante el riesgo de un impacto inminente con vehículos o ciclistas mientras se realiza un giro a la izquierda"
     }
   ],
 
-  motor: {
-    denominacion: "2.5 Turbo GDI Nafta",
-    cilindrada_cc: 2500,
-    potencia_cv_rpm: "281 @ 5.700 rpm (aprox.)",
-    torque_nm_rpm: "430 @ 1.700–4.000 rpm (aprox. 43 kgm)",
-    combustible: "Nafta",
-    traccion: "Delantera / 4WD Electrónico (Torque on Demand)",
-    normaEmisiones: "Euro 6 aprox."
-  },
+  conectividad: [
+    {
+      nombre: "Panel digital de 12,3”",
+      descripcion:
+        "Panel de instrumentos digital de 12,3” que muestra información esencial sobre velocidad y conducción de manera clara y centrada."
+    },
+    {
+      nombre: "Pantalla tactil de 12,3”",
+      descripcion:
+        "Te permite acceder fácilmente a todas las funciones de conectividad y al sistema de información y entretenimiento. Compatible con Apple CarPlay y Android Auto, te permiten acceder a aplicaciones, música y teléfono."
+    },
+    {
+      nombre: "Reconocimiento dactilar",
+      descripcion:
+        "Este sistema permite encender el motor y pantallas multimedia. Además, permite guardar configuraciones predeterminadas para diferentes usuarios "
+    },
+    {
+      nombre: "Portón trasero con apertura eléctrica",
+      descripcion:
+        "El portón trasero se abre automáticamente cuando se detecta la llave inteligente. También se puede ajustar la altura de elevación con diferentes configuraciones."
+    }
+  ],
 
-  dimensiones: {
-    largo_mm: 4830,
-    ancho_mm: 1900,
-    alto_mm: 1770,
-    distanciaEntreEjes_mm: 2815,
-    despeje_mm: 177,
-    baul_l: 725,
-    tanque_l: 67,
-    peso_kg: 1910,
-    neumaticos: "255/45 R20",
-    llantas: "Aleación 20\""
-  },
-
-  seguridad: {
-    airbags:
-      "Múltiples (frontales, laterales y de cortina para todas las filas)",
-    abs_ebd: true,
-    esc_tcs: true,
-    hac: true,
-    ess: true,
-    camaraRetroceso: true,
-    sensoresEstacionamiento: "Delanteros y traseros",
-    isofix: true,
-    otras: [
-      "Programa electrónico de estabilidad (ESP)",
-      "Asistente de colisión frontal (FCA con giro a la izquierda)",
-      "Control de crucero inteligente (SCC)",
-      "Monitor de punto ciego (BVM) y BCA",
-      "Alerta de apertura de puertas segura (SEW)",
-      "Detector de fatiga y alerta de ocupantes traseros",
-      "Cámara 360° y cámara de visión trasera en movimiento",
-      "Downhill Brake Control (DBC) y Hill Start Assist (HAC)"
-    ]
-  },
-
-  confort: {
-    accesoSinLlave: true,
-    botonStartStop: true,
-    climatizacion: "Climatizador automático bi-zona con salidas 2ª y 3ª fila",
-    direccion: "Asistida eléctricamente",
-    levantavidrios: "4 eléctricos (auto up/down)",
-    espejos:
-      "Eléctricos, rebatibles, calefaccionados con repetidor de giro integrado",
-    tapizados: "Cuero",
-    volante: "Tapizado en cuero, calefaccionado, regulable en altura y profundidad",
-    otras: [
-      "7 plazas con 3 filas de asientos",
-      "Asientos delanteros eléctricos, calefaccionados y ventilados",
-      "Asientos 2ª fila desplazables y plegables remotamente",
-      "Doble techo solar panorámico",
-      "Portón trasero con apertura eléctrica y altura regulable",
-      "Reconocimiento dactilar para arranque/configuración",
-      "Modos de conducción y Terrain Mode"
-    ]
-  },
-
-  multimedia: {
-    pantalla: "Pantalla curva panorámica 12,3\" + 12,3\"",
-    conectividad: ["Apple CarPlay", "Android Auto", "Bluetooth", "USB"],
-    parlantes: 12,
-    puertos: [
-      "USB delanteros",
-      "USB en 2ª fila",
-      "USB en 3ª fila",
-      "Toma 12V"
+  rendimiento: [
+    {
+      nombre: "Motor Smartstream G 2.0",
+      descripcion:
+        " Diseñado para entregar un equilibrio entre rendimiento eficiente y suavidad en la conducción. Se combina con una transmisión automática de 6 velocidades y tracción delantera."
+    },
+    {
+      nombre: "Suspension electrónica (ECS)",
+      descripcion:
+        " El sistema ECS ajusta la fuerza en cada rueda para reducir deslizamientos y movimientos verticales, mejorando el control al volante, lo que permie una conducción mas estable."
+    },
+    {
+      nombre: "Modos de conduccion",
+      descripcion:
+        "Permite seleccionar distintos modos de conducción de acuerdo a las necesidades. Elige entre Normal, Eco o Sport. Cada modo ofrece diferentes parámetros de aceleración, puntos de cambio y eficiencia de combustible"
+    }
+  ],
+   colores: {
+    exteriores: [
+      "Creamy White",
+      "Titan gray metallic",
+      "Ocean indigo pearl",
+      "Shimmering Silver Metalic",
+      "Phantom black pearl",
     ],
-    camara: "360°"
+    interiores: ["Negro Tela",
+      "Cuero negro",
+      "Cuero gris"
+    ]
   },
-
-  colores: {
-    exteriores: ["Blanco", "Plata", "Gris", "Verde", "Azul", "Negro"],
-    interiores: ["Negro/Cuero", "Beige/Cuero (según mercado)"]
-  },
-
-  garantia: {
-    garantia: "Consultar según mercado (3 a 5 años / 100.000 km aprox.)",
-    origen: "Corea",
+   garantia: {
+    garantia: "3 años o 100.000 km",
     servicio: "Mantenimiento cada 10.000 km o 12 meses"
   },
 
- links: {
-  brochureUrl:
-    "https://www.hyundai.com.ar/publicfiles/datasheets/ficha-tecnica-nueva-santa-fe_1756483893.pdf",
-  imagenes: [
-    "/santafe/santafe-3.jpg",
-    "/santafe/santafe-1.jpg",
-    "/santafe/santafe-2.jpg",
-    "/santafe/santafe-4.jpg",
-    "/santafe/santafe-5.jpg",
-    "/santafe/santafe-6.jpg",
-    "/santafe/santafe-7.jpg"
-  ],
-  videoUrl: "https://www.youtube.com/watch?v=CYK0ONs8PNY"
-}
-
+  links: {
+    brochureUrl:
+      "https://www.hyundai.com.ec/static/media/nuevo-tucson-ficha-tecnica.8ea68457.pdf",
+    imagenes: [
+      "/tucson/tucson-1.jpg",
+      "/tucson/tucson-2.jpg",
+      "/tucson/tucson-3.jpg",
+      "/tucson/tucson-4.jpg",
+      "/tucson/tucson-5.jpg",
+      "/tucson/tucson-6.jpg",
+      "/tucson/tucson-7.jpg",
+      "/tucson/tucson-8.jpg"
+    ],
+    videoUrl: "https://www.youtube.com/watch?v=Dmgn7zpVsms"
+  }
 };
 
-// NUEVA STARIA
-const staria: Vehiculo = {
-  id: "staria",
-  nombreComercial: "Nueva Staria",
-  eslogan: "Comodidad y versatilidad sin fronteras.",
-  resumenCorto:
-    "MPV de gran tamaño pensada para familias numerosas y uso profesional premium. Interior configurable, altísimo nivel de seguridad y ayudas a la conducción, más un motor 2.2 diésel eficiente para largos recorridos.",
+// NUEVA SANTA FE
+const santaFe: DetalleVehiculo = {
+  id: "santafe",
 
-  versiones: [
+  nombre: "Santa Fe",
+  presentacion:
+    "Descubrí el mundo a tu ritmo con la Nueva Santa Fe. Siempre lista para la aventura, ofrece interior amplio, tecnología inteligente y comodidad para vos y tu equipo en cualquier camino.",
+
+  seguridad: [
     {
-      nombre: "2.2 CRDi 2WD AT",
-      transmision: "Automática 8 vel",
-      precioLista: "Consultar",
-      equipamientoClaves: [
-        "Motor 2.2 CRDi 177 CV",
-        "Hasta 11 plazas (según configuración)",
-        "Monitor de visor de punto ciego (BVM) y múltiples ADAS"
-      ]
+      nombre: "Monitor de visor de punto ciego",
+      descripcion:
+        "Esta función permite ver las vistas laterales de ambos lados en la pantalla digital. Se activa automáticamente mediante el uso del indicador de giro.”"
     },
     {
-      nombre: "2.2 CRDi 4WD AT Luxury",
-      transmision: "Automática 8 vel",
-      precioLista: "Consultar",
-      equipamientoClaves: [
-        "Tracción 4WD con reparto inteligente",
-        "Puertas laterales corredizas eléctricas",
-        "Sistema de sonido BOSE premium"
-      ]
+      nombre: "Control de crucero inteligente (SCC)",
+      descripcion:
+        "Una función que mantiene una distancia segura con el vehiculo de adelante, ajustando automáticamente la velocidad"
+    },
+    {
+      nombre: "Alerta de apertura de puertas seguro (SEW)",
+      descripcion:
+        "El Alerta de Apertura de Puertas Segura (SEW) avisa al conductor si intenta abrir una puerta cuando hay tráfico cercano, ayudando a evitar accidentes con ciclistas, peatones o vehículos."
+    },
+    {
+      nombre: "Asistente de colision frontal (FCA)",
+      descripcion:
+        "Este sistema alerta al conductor si el vehículo de adelante esta reduciendo de manera brusca la velocidad o si existe la posibilidad de una colisión frontal, activando los frenos en caso de colisión inminente. También frena automáticamente ante el riesgo de un impacto inminente con vehículos o ciclistas mientras se realiza un giro a la izquierda"
     }
   ],
 
-  motor: {
-    denominacion: "2.2 CRDi VGT Diesel",
-    cilindrada_cc: 2199,
-    potencia_cv_rpm: "177 @ 3.800 rpm",
-    torque_nm_rpm: "430 @ 1.500–2.500 rpm (44 kgm)",
-    combustible: "Diésel",
-    traccion: "Delantera / 4WD electrónico (según versión)",
-    normaEmisiones: "Euro 6 aprox."
-  },
+  conectividad: [
+    {
+      nombre: "Volante con palanca de cambios integrada",
+      descripcion:
+        "Control total al alcance de tu mano: las levas en el volante y la palanca de cambios en la columna liberan la consola y mejoran la comodidad del interior.."
+    },
+    {
+      nombre: "7 plazas. 3 filas. Comodidad maxima",
+      descripcion:
+        "Pensada para brindar una comodiad maxima."
+    },
+    {
+      nombre: "Pantalla curva panoramica",
+      descripcion:
+        " La pantalla curva panorámica integra dos sistemas con tecnología innovadora: una sistema de información y entretenimiento de 12,3” y un panel digital de instrumentos de 12,3” con servicios de Apple CarPlay y Android Auto."
+    },
+    {
+      nombre: "Portón trasero con apertura eléctrica",
+      descripcion:
+        "El portón trasero se abre automáticamente cuando se detecta la llave inteligente. También se puede ajustar la altura de elevación con diferentes configuraciones. Espacio de carga de 725 litros.”"
+    }
+  ],
 
-  dimensiones: {
-    largo_mm: 5253,
-    ancho_mm: 1997,
-    alto_mm: 1990,
-    distanciaEntreEjes_mm: 3273,
-    despeje_mm: 186,
-    baul_l: 1024,
-    tanque_l: 75,
-    peso_kg: 2231,
-    neumaticos: "235/55 R18",
-    llantas: "Aleación 18\""
-  },
-
-  seguridad: {
-    airbags:
-      "Múltiples (frontales, laterales y de cortina para filas delanteras y traseras)",
-    abs_ebd: true,
-    esc_tcs: true,
-    hac: true,
-    ess: true,
-    camaraRetroceso: true,
-    sensoresEstacionamiento: "Delanteros y traseros",
-    isofix: true,
-    otras: [
-      "Programa electrónico de estabilidad (ESP)",
-      "Asistente de colisión frontal (FCA)",
-      "Monitor de visor de punto ciego (BVM)",
-      "Asistencia de seguimiento de carril (LFA)",
-      "Asistencia de conducción en carretera (HDA)",
-      "Control de crucero inteligente (SCC)",
-      "Asistente de arranque en pendiente (HAC)"
+  rendimiento: [
+    {
+      nombre: " MOTOR 2.5 TURBO GDI Nafta",
+      descripcion:
+        "Gracias al turbo y a la alimentación directa, entrega una respuesta potente desde bajos-medios, ideal para prestaciones dinámicas, sin sacrificar refinamiento.\nSu diseño está pensado para combinar potencia y versatilidad: uso urbano, ruta e incluso versiones con tracción integral."
+    },
+    {
+      nombre: "Traccion",
+      descripcion:
+        "Delantera / 4WD Electrónico (Torque on Demand)."
+    },
+    {
+      nombre: "Caja",
+      descripcion:
+        "Caja automática de 8 velocidades y doble embrague DCT"
+    }
+    
+  ],   colores: {
+    exteriores: [
+      "Abyss Black",
+      "Magnetic Gray",
+      "Typhoon Gray",
+      "Pebble Blue",
+      "Creamy White",
+      "Creamy White Matte",
+      "Earthy Brass"
+    ],
+    interiores: ["Negro","Blanco"
+      
     ]
   },
-
-  confort: {
-    accesoSinLlave: true,
-    botonStartStop: true,
-    climatizacion: "Climatizador automático con salidas para todas las filas",
-    direccion: "Asistida eléctricamente",
-    levantavidrios: "4 eléctricos",
-    espejos: "Eléctricos, rebatibles, con luz de giro",
-    tapizados: "Tela o cuero (según versión)",
-    volante: "Regulable en altura y profundidad, multifunción",
-    otras: [
-      "Puertas laterales corredizas eléctricas",
-      "Puerta trasera con apertura asistida",
-      "Configuraciones de 7 a 11 plazas (según mercado)",
-      "Caja de cambios accionable por botón",
-      "Modos de conducción (Normal/Eco/Sport)"
-    ]
+   garantia: {
+    garantia: "3 años o 100.000 km",
+    servicio: "Mantenimiento cada 10.000 km o 12 meses"
   },
 
-  multimedia: {
-    pantalla: "Pantalla multimedia 8–10,25\" (según versión)",
-    conectividad: ["Apple CarPlay", "Android Auto", "Bluetooth", "USB"],
-    parlantes: 8,
-    puertos: ["USB delanteros", "USB en filas traseras", "Toma 12V"],
-    camara: "Retroceso"
-  },
+  links: {
+    brochureUrl:
+      "https://www.hyundai.com.ar/publicfiles/datasheets/ficha-tecnica-nueva-santa-fe_1756483893.pdf",
+    imagenes: [
+      "/santafe/santafe-3.jpg",
+      "/santafe/santafe-1.jpg",
+      "/santafe/santafe-2.jpg",
+      "/santafe/santafe-4.jpg",
+      "/santafe/santafe-5.jpg",
+      "/santafe/santafe-6.jpg",
+      "/santafe/santafe-7.jpg"
+    ],
+    videoUrl: "https://www.youtube.com/watch?v=CYK0ONs8PNY"
+  }
+};
 
+// NUEVA STARIA
+const staria: DetalleVehiculo = {
+  id: "staria",
+
+  nombre: "Staria",
+  presentacion:
+    "En la Nueva Staria, las posibilidades no tienen fronteras. Viví una experiencia de comodidad, versatilidad y seguridad líderes en su clase, mientras Hyundai impulsa el futuro de la movilidad MPV.",
+
+  seguridad: [
+    {
+      nombre: "Monitor de visor de punto ciego (BVM)",
+      descripcion:
+        "Esta función permite ver las vistas laterales de ambos lados en la pantalla digital. Se activa automáticamente mediante el uso del indicador de giro.”"
+    },
+    {
+      nombre: "Asistencia de seguimiento de carril (LFA)",
+      descripcion:
+        "Cuando esta activado permite mantener el vehiculo centrado en su carril a velocidades entre 0 y 180km/h."
+    },
+    {
+      nombre: "Asistencia de conducción en carretera (HDA)",
+      descripcion:
+        "Cuando el control de crucero inteligente o la asistencia de seguimiento de carril están activos, mantiene el vehiculo centrado en su carril y viajando a una distancia segura detrás del automóvil delantero."
+    },
+    {
+      nombre: "Asistente de colision frontal (FCA)",
+      descripcion:
+        "Este sistema alerta al conductor si el vehículo de adelante esta reduciendo de manera brusca la velocidad o si existe la posibilidad de una colisión frontal, activando los frenos en caso de colisión inminente."
+    }
+  ],
+
+  conectividad: [
+    {
+      nombre: "Cluster totalmente digital",
+      descripcion:
+        "Los graficos varian de estética de acuerdo al modo de conducción seleccionado (Normal, Sport o ECO."
+    },
+    {
+      nombre: "Cargador inalambrico",
+      descripcion:
+        "La bandeja del cargador inalámbrico de alta velocidad cuenta con una función de enfriamiento que evita el sobrecalentamiento del teléfono celular para mayor seguridad."
+    },
+    {
+      nombre: "BOSE premium sound",
+      descripcion:
+        "Su sistema de sonido BOSE ofrece un rendimiento estelar con parlantes de alto rendimiento y un subwoofer ajustado que brinda un alto realismo de sonido."
+    },
+    {
+      nombre: "Puerta corrediza electrica",
+      descripcion:
+        "No se requieren manos ni presionar botones. La puerta detecta su presencia y se abre automáticamente detectando la llave inteligente.”"
+    }
+  ],
+
+  rendimiento: [
+    {
+      nombre: " MOTOR 2.2 Diesel",
+      descripcion:
+        "Tiene una potencia máxima de 177cv y caja de cambios automatica."
+    },
+    {
+      nombre: "Caja de cambios accionable con boton",
+      descripcion:
+        "Botones fáciles e intuitivos que mejoran la apariencia limpia del interior y ahorran espacio en la cabina"
+    },
+    {
+      nombre: "Modos de conduccion",
+      descripcion:
+        "Permite seleccionar distintos modos de conducción de acuerdo a las necesidades. Elige entre Normal, Eco o Sport. Cada modo ofrece diferentes parámetros de aceleración, puntos de cambio y eficiencia de combustible"
+    }
+  ],
   colores: {
-    exteriores: ["Blanco", "Plata", "Gris", "Negro"],
-    interiores: ["Negro/Tela", "Negro/Cuero (según versión)"]
+    exteriores: [
+      "Abyss Black Pearl",
+      "Moonlight Blue Pearl",
+      "Graphite Gray Metallic",
+      "Shimmering Silver Metalic",
+      "Creamy White",
+  
+    ],
+    interiores: ["Negro","Blanco"
+      
+    ]
   },
-
-  garantia: {
-    garantia: "Consultar según mercado (3 a 5 años / 100.000 km aprox.)",
-    origen: "Corea",
+   garantia: {
+    garantia: "3 años o 100.000 km",
     servicio: "Mantenimiento cada 10.000 km o 12 meses"
   },
 
@@ -874,19 +730,17 @@ const staria: Vehiculo = {
       "/staria/staria-3.jpg",
       "/staria/staria-4.jpg",
       "/staria/staria-5.jpg",
-      "/staria/staria-6.jpg",
+      "/staria/staria-6.jpg"
     ],
     videoUrl: "https://www.youtube.com/watch?v=staria_video_demo"
   }
 };
 
-// ARRAY GENERAL (por si te sirve agruparlos)
-const vehiculos: Vehiculo[] = [hb20,hb20s, creta, tucson, santaFe, staria];
+// ARRAY GENERAL
+const vehiculos: DetalleVehiculo[] = [hb20, hb20s, creta, tucson, santaFe, staria];
 
-export { hb20,hb20s, creta, tucson, santaFe, staria, vehiculos};
+export { hb20, hb20s, creta, tucson, santaFe, staria, vehiculos };
 
 export function getVehiculoById(id: string) {
   return vehiculos.find(v => v.id === id);
 }
-
-

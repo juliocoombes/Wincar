@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useState } from "react";
 import "./ModelDetail.css";
 import { getVehiculoById, type DetalleVehiculo } from "../../content/vehiculo";
 
@@ -16,6 +17,12 @@ export default function ModelDetail() {
       </section>
     );
   }
+
+  // 🔵 Estado de color seleccionado
+  const coloresExteriores = vehiculo.colores?.exteriores ?? [];
+  const [colorSeleccionado, setColorSeleccionado] = useState(
+    coloresExteriores[0] ?? null
+  );
 
   return (
     <section className="section">
@@ -98,53 +105,80 @@ export default function ModelDetail() {
           </div>
 
           <div className="card card-rendimiento">
-  <div className="card-rendimiento-text">
-    <h2>Rendimiento</h2>
+            <div className="card-rendimiento-text">
+              <h2>Rendimiento</h2>
 
-    {vehiculo.rendimiento?.length > 0 && (
-      <ul className="modeldetail-list">
-        {vehiculo.rendimiento.map((item, i) => (
-          <li key={i}>
-            <strong>{item.nombre}:</strong> {item.descripcion}
-          </li>
-        ))}
-      </ul>
-    )}
-  </div>
+              {vehiculo.rendimiento?.length > 0 && (
+                <ul className="modeldetail-list">
+                  {vehiculo.rendimiento.map((item, i) => (
+                    <li key={i}>
+                      <strong>{item.nombre}:</strong> {item.descripcion}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
 
-  {vehiculo.links?.imagenes?.[1] && (
-    <div className="card-rendimiento-img">
-      <img
-        src={vehiculo.links.imagenes[1]}
-        alt={`${vehiculo.nombre} rendimiento`}
-      />
-    </div>
-  )}
-</div>
-
+            {vehiculo.links?.imagenes?.[1] && (
+              <div className="card-rendimiento-img">
+                <img
+                  src={vehiculo.links.imagenes[1]}
+                  alt={`${vehiculo.nombre} rendimiento`}
+                />
+              </div>
+            )}
+          </div>
         </section>
 
         {/* COLORES / GARANTÍA */}
         <section className="modeldetail-grid-wide">
-          <div className="card">
-            <h2>Colores</h2>
-            {vehiculo.colores?.exteriores?.length ? (
-              <p>
-                <strong>Exteriores:</strong>{" "}
-                {vehiculo.colores.exteriores.join(", ")}
-              </p>
+          
+          {/* 🔵 NUEVO SISTEMA DE COLORES */}
+          <div className="card colores-card">
+            <h2>Colores exteriores</h2>
+
+            {coloresExteriores.length > 0 ? (
+              <>
+                {/* Nombre del color actual */}
+                <p className="color-nombre">
+                  {colorSeleccionado?.nombre ?? coloresExteriores[0].nombre}
+                </p>
+
+                {/* Swatches con imágenes */}
+                <div className="color-swatches">
+                  {coloresExteriores.map((color, i) => {
+                    const isSelected =
+                      (colorSeleccionado?.nombre ?? coloresExteriores[0].nombre) ===
+                      color.nombre;
+
+                    return (
+                      <button
+                        key={i}
+                        type="button"
+                        className={`swatch ${isSelected ? "selected" : ""}`}
+                        onClick={() => setColorSeleccionado(color)}
+                      >
+                        <img src={color.imagen} alt={color.nombre} />
+                        {isSelected && <span className="check">✔</span>}
+                      </button>
+                    );
+                  })}
+                </div>
+              </>
             ) : (
               <p>No hay información de colores exteriores.</p>
             )}
 
-            {vehiculo.colores?.interiores?.length && (
-              <p>
+            {/* Interiores */}
+            {vehiculo.colores?.interiores?.length > 0 && (
+              <p className="color-interiores">
                 <strong>Interiores:</strong>{" "}
                 {vehiculo.colores.interiores.join(", ")}
               </p>
             )}
           </div>
 
+          {/* GARANTÍA */}
           <div className="card">
             <h2>Garantía</h2>
             {vehiculo.garantia?.garantia && (

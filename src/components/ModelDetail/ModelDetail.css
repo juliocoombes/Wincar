@@ -221,6 +221,91 @@
   object-fit: cover;
   border-radius: 12px;
 }
+/* ===============================
+   COLORES EXTERIORES (swatches)
+   =============================== */
+
+.colores-card h2 {
+  margin-bottom: 8px;
+}
+
+.color-nombre {
+  color: #5a5a5a;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.color-interiores {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #444;
+}
+
+/* Contenedor de los swatches */
+.color-swatches {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;      /* por si hay muchos en mobile */
+  padding-bottom: 4px;
+}
+
+/* Botón de cada swatch */
+.swatch {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  flex: 0 0 auto;
+    overflow: visible;
+}
+
+/* Imagen del color */
+.swatch img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  display: block;
+}
+
+/* Swatch seleccionado: borde celeste */
+.swatch.selected {
+  border-color: #1da1f2;
+}
+
+/* Check redondo azul arriba a la derecha */
+.swatch .check {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #1da1f2;
+  color: #ffffff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+/* Un toque de ajuste en pantallas chicas */
+@media (max-width: 600px) {
+  .swatch {
+    width: 52px;
+    height: 52px;
+  }
+
+  .color-nombre {
+    font-size: 14px;
+  }
+}
 
 /* RESPONSIVE: en mobile, una columna */
 @media (max-width: 900px) {

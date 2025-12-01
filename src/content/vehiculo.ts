@@ -79,6 +79,11 @@ export type LinksYMedios = {
   videoUrl?: string; // YouTube u otro
 };
 
+export type ColorExterior = {
+  nombre: string;
+  imagen: string; // ruta al PNG/JPG del cuadradito de color
+};
+
 export interface DetalleVehiculo {
   id: string;
 
@@ -101,7 +106,7 @@ export interface DetalleVehiculo {
   }>;
 
   colores?: {
-    exteriores: string[];
+    exteriores: ColorExterior[];
     interiores?: string[];
   };
 
@@ -187,18 +192,41 @@ const hb20: DetalleVehiculo = {
     }
   ],
 
-  colores: {
-    exteriores: [
-      "Corona Blue Pearl",
-      "Micro Grey",
-      "Shadow Grey",
-      "Shimmering Silver Metalic",
-      "Atlas White",
-      "Lencois Beige Metalic",
-      "Ebony Black"
-    ],
-    interiores: ["Negro/Tela"]
-  },
+ colores: {
+  exteriores: [
+    {
+      nombre: "Magnetic Gray Metallic",
+      imagen: "/colores/M2F_Magnetic_Gray_Metallic.jpg"
+    },
+    {
+      nombre: "Abyss Black Pearl",
+      imagen: "/colores/A2B_AbyssBlack_Black_Pearl.jpg"
+    },
+    {
+      nombre: "Pebble Blue Pearl",
+      imagen: "/colores/PB2_Pebble_Blue_Pearl.jpg"
+    },
+    {
+      nombre: "Typhoon Silver Metallic",
+      imagen: "/colores/T2X_Typhoon_Silver_Metallic.jpg"
+    },
+    {
+      nombre: "White Cream Pearl",
+      imagen: "/colores/WW2_WhiteCream_White_Pearl.jpg"
+    },
+    {
+      nombre: "Creamy White Matte",
+      imagen: "/colores/WWM_Creamy_White_Matte.jpg"
+    },
+    {
+      nombre: "Earthy Brass Matte",
+      imagen: "/colores/YBM_Earthy_Brass_Matte.jpg"
+    }
+  ],
+
+  interiores: ["Negro/Tela"]
+},
+
 
   garantia: {
     garantia: "3 años o 100.000 km",
@@ -285,18 +313,41 @@ const hb20s: DetalleVehiculo = {
         "Las levas de cambio al volante te permiten tener una experiencia deportiva y tecnológica mientras manejas."
     }
   ],
-  colores: {
-    exteriores: [
-      "Corona Blue Pearl",
-      "Micro Grey",
-      "Shadow Grey",
-      "Shimmering Silver Metalic",
-      "Atlas White",
-      "Lencois Beige Metalic",
-      "Ebony Black"
-    ],
-    interiores: ["Negro/Tela"]
-  },
+colores: {
+  exteriores: [
+    {
+      nombre: "Magnetic Gray Metallic",
+      imagen: "/colores/M2F_Magnetic_Gray_Metallic.jpg"
+    },
+    {
+      nombre: "Abyss Black Pearl",
+      imagen: "/colores/A2B_AbyssBlack_Black_Pearl.jpg"
+    },
+    {
+      nombre: "Pebble Blue Pearl",
+      imagen: "/colores/PB2_Pebble_Blue_Pearl.jpg"
+    },
+    {
+      nombre: "Typhoon Silver Metallic",
+      imagen: "/colores/T2X_Typhoon_Silver_Metallic.jpg"
+    },
+    {
+      nombre: "White Cream Pearl",
+      imagen: "/colores/WW2_WhiteCream_White_Pearl.jpg"
+    },
+    {
+      nombre: "Creamy White Matte",
+      imagen: "/colores/WWM_Creamy_White_Matte.jpg"
+    },
+    {
+      nombre: "Earthy Brass Matte",
+      imagen: "/colores/YBM_Earthy_Brass_Matte.jpg"
+    }
+  ],
+
+  interiores: ["Negro/Tela"]
+}
+,
    garantia: {
     garantia: "3 años o 100.000 km",
     servicio: "Mantenimiento cada 10.000 km o 12 meses"
@@ -386,18 +437,41 @@ const creta: DetalleVehiculo = {
         "Estabilidad y máximo confort en todo tipo de caminos. "
     }
   ],
-  colores: {
-    exteriores: [
-      "Corona Blue Pearl",
-      "Micro Grey",
-      "Shadow Grey",
-      "Shimmering Silver Metalic",
-      "Atlas White",
-      "Lencois Beige Metalic",
-      "Ebony Black"
-    ],
-    interiores: ["Negro/Tela"]
-  },
+ colores: {
+  exteriores: [
+    {
+      nombre: "Magnetic Gray Metallic",
+      imagen: "/colores/M2F_Magnetic_Gray_Metallic.jpg"
+    },
+    {
+      nombre: "Abyss Black Pearl",
+      imagen: "/colores/A2B_AbyssBlack_Black_Pearl.jpg"
+    },
+    {
+      nombre: "Pebble Blue Pearl",
+      imagen: "/colores/PB2_Pebble_Blue_Pearl.jpg"
+    },
+    {
+      nombre: "Typhoon Silver Metallic",
+      imagen: "/colores/T2X_Typhoon_Silver_Metallic.jpg"
+    },
+    {
+      nombre: "White Cream Pearl",
+      imagen: "/colores/WW2_WhiteCream_White_Pearl.jpg"
+    },
+    {
+      nombre: "Creamy White Matte",
+      imagen: "/colores/WWM_Creamy_White_Matte.jpg"
+    },
+    {
+      nombre: "Earthy Brass Matte",
+      imagen: "/colores/YBM_Earthy_Brass_Matte.jpg"
+    }
+  ],
+
+  interiores: ["Negro/Tela"]
+}
+,
    garantia: {
     garantia: "3 años o 100.000 km",
     servicio: "Mantenimiento cada 10.000 km o 12 meses"
@@ -491,19 +565,41 @@ const tucson: DetalleVehiculo = {
         "Permite seleccionar distintos modos de conducción de acuerdo a las necesidades. Elige entre Normal, Eco o Sport. Cada modo ofrece diferentes parámetros de aceleración, puntos de cambio y eficiencia de combustible"
     }
   ],
-   colores: {
-    exteriores: [
-      "Creamy White",
-      "Titan gray metallic",
-      "Ocean indigo pearl",
-      "Shimmering Silver Metalic",
-      "Phantom black pearl",
-    ],
-    interiores: ["Negro Tela",
-      "Cuero negro",
-      "Cuero gris"
-    ]
-  },
+ colores: {
+  exteriores: [
+    {
+      nombre: "Magnetic Gray Metallic",
+      imagen: "/colores/M2F_Magnetic_Gray_Metallic.jpg"
+    },
+    {
+      nombre: "Abyss Black Pearl",
+      imagen: "/colores/A2B_AbyssBlack_Black_Pearl.jpg"
+    },
+    {
+      nombre: "Pebble Blue Pearl",
+      imagen: "/colores/PB2_Pebble_Blue_Pearl.jpg"
+    },
+    {
+      nombre: "Typhoon Silver Metallic",
+      imagen: "/colores/T2X_Typhoon_Silver_Metallic.jpg"
+    },
+    {
+      nombre: "White Cream Pearl",
+      imagen: "/colores/WW2_WhiteCream_White_Pearl.jpg"
+    },
+    {
+      nombre: "Creamy White Matte",
+      imagen: "/colores/WWM_Creamy_White_Matte.jpg"
+    },
+    {
+      nombre: "Earthy Brass Matte",
+      imagen: "/colores/YBM_Earthy_Brass_Matte.jpg"
+    }
+  ],
+
+  interiores: ["Negro/Tela"]
+}
+,
    garantia: {
     garantia: "3 años o 100.000 km",
     servicio: "Mantenimiento cada 10.000 km o 12 meses"
@@ -597,20 +693,41 @@ const santaFe: DetalleVehiculo = {
         "Caja automática de 8 velocidades y doble embrague DCT"
     }
     
-  ],   colores: {
-    exteriores: [
-      "Abyss Black",
-      "Magnetic Gray",
-      "Typhoon Gray",
-      "Pebble Blue",
-      "Creamy White",
-      "Creamy White Matte",
-      "Earthy Brass"
-    ],
-    interiores: ["Negro","Blanco"
-      
-    ]
-  },
+  ],colores: {
+  exteriores: [
+    {
+      nombre: "Magnetic Gray Metallic",
+      imagen: "/colores/M2F_Magnetic_Gray_Metallic.jpg"
+    },
+    {
+      nombre: "Abyss Black Pearl",
+      imagen: "/colores/A2B_AbyssBlack_Black_Pearl.jpg"
+    },
+    {
+      nombre: "Pebble Blue Pearl",
+      imagen: "/colores/PB2_Pebble_Blue_Pearl.jpg"
+    },
+    {
+      nombre: "Typhoon Silver Metallic",
+      imagen: "/colores/T2X_Typhoon_Silver_Metallic.jpg"
+    },
+    {
+      nombre: "White Cream Pearl",
+      imagen: "/colores/WW2_WhiteCream_White_Pearl.jpg"
+    },
+    {
+      nombre: "Creamy White Matte",
+      imagen: "/colores/WWM_Creamy_White_Matte.jpg"
+    },
+    {
+      nombre: "Earthy Brass Matte",
+      imagen: "/colores/YBM_Earthy_Brass_Matte.jpg"
+    }
+  ],
+
+  interiores: ["Negro/Tela"]
+}
+,
    garantia: {
     garantia: "3 años o 100.000 km",
     servicio: "Mantenimiento cada 10.000 km o 12 meses"
@@ -703,19 +820,41 @@ const staria: DetalleVehiculo = {
         "Permite seleccionar distintos modos de conducción de acuerdo a las necesidades. Elige entre Normal, Eco o Sport. Cada modo ofrece diferentes parámetros de aceleración, puntos de cambio y eficiencia de combustible"
     }
   ],
-  colores: {
-    exteriores: [
-      "Abyss Black Pearl",
-      "Moonlight Blue Pearl",
-      "Graphite Gray Metallic",
-      "Shimmering Silver Metalic",
-      "Creamy White",
-  
-    ],
-    interiores: ["Negro","Blanco"
-      
-    ]
-  },
+ colores: {
+  exteriores: [
+    {
+      nombre: "Magnetic Gray Metallic",
+      imagen: "/colores/M2F_Magnetic_Gray_Metallic.jpg"
+    },
+    {
+      nombre: "Abyss Black Pearl",
+      imagen: "/colores/A2B_AbyssBlack_Black_Pearl.jpg"
+    },
+    {
+      nombre: "Pebble Blue Pearl",
+      imagen: "/colores/PB2_Pebble_Blue_Pearl.jpg"
+    },
+    {
+      nombre: "Typhoon Silver Metallic",
+      imagen: "/colores/T2X_Typhoon_Silver_Metallic.jpg"
+    },
+    {
+      nombre: "White Cream Pearl",
+      imagen: "/colores/WW2_WhiteCream_White_Pearl.jpg"
+    },
+    {
+      nombre: "Creamy White Matte",
+      imagen: "/colores/WWM_Creamy_White_Matte.jpg"
+    },
+    {
+      nombre: "Earthy Brass Matte",
+      imagen: "/colores/YBM_Earthy_Brass_Matte.jpg"
+    }
+  ],
+
+  interiores: ["Negro/Tela"]
+}
+,
    garantia: {
     garantia: "3 años o 100.000 km",
     servicio: "Mantenimiento cada 10.000 km o 12 meses"

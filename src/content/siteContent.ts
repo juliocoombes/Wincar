@@ -103,7 +103,7 @@ const content: SiteContent = {
       imagen: "/carrousel/carrousel-4.jpg",
       titulo: "HB20s",
       subtitulo: "Elegancia y performance.",
-      ctaPrincipal: { label: "Descubrir", href: "#hb20s" }
+      ctaPrincipal: { label: "Descubrir", href: "/modelos/hb20s" }
     },
     {
       imagen: "/carrousel/carrousel-2.jpg",
@@ -115,13 +115,13 @@ const content: SiteContent = {
       imagen: "/carrousel/carrousel-1.jpg",
       titulo: "Santa Fe",
       subtitulo: "Elegancia y performance.",
-      ctaPrincipal: { label: "Descubrir", href: "/modelos/santa-fe" }
+      ctaPrincipal: { label: "Descubrir", href: "/modelos/santafe" }
     },
     {
       imagen: "/carrousel/carrousel-5.jpg",
       titulo: "Staria",
       subtitulo: "Elegancia y performance.",
-      ctaPrincipal: { label: "Descubrir", href: "#ficha" }
+      ctaPrincipal: { label: "Descubrir", href: "/modelos/staria" }
     }
   ]
 }

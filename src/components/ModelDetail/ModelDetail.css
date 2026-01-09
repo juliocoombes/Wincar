@@ -404,3 +404,46 @@
   }
 }
 
+@media (max-width: 599px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+/* --- Fix swatches: que entren y scrolleen bien en mobile --- */
+.colores-card {
+  overflow: hidden; /* evita que "se salga" por el check/sombra */
+}
+
+.color-swatches {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 6px 2px 10px; /* espacio para que el check no corte */
+  margin: 0;             /* evita corrimientos raros */
+}
+
+.swatch {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+}
+
+/* En pantallas chicas, un poco más chicos todavía */
+@media (max-width: 600px) {
+  .swatch {
+    width: 48px;
+    height: 48px;
+  }
+
+  .swatch .check {
+    top: -4px;
+    right: -4px;
+    width: 20px;
+    height: 20px;
+    font-size: 13px;
+  }
+}

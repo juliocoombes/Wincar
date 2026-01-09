@@ -169,13 +169,7 @@ export default function ModelDetail() {
               <p>No hay información de colores exteriores.</p>
             )}
 
-            {/* Interiores */}
-            {vehiculo.colores?.interiores?.length > 0 && (
-              <p className="color-interiores">
-                <strong>Interiores:</strong>{" "}
-                {vehiculo.colores.interiores.join(", ")}
-              </p>
-            )}
+          
           </div>
 
           {/* GARANTÍA */}

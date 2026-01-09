@@ -237,11 +237,11 @@ const hb20: DetalleVehiculo = {
     brochureUrl:
       "https://www.hyundai.com.ar/publicfiles/datasheets/hb20fichatecnica-final_compressed_1732281228.pdf",
     imagenes: [
-      "/hb20h/hb20h-4.jpg",
-      "/hb20h/hb20h-1.jpg",
-      "/hb20h/hb20h-3.jpg",
-      "/hb20h/hb20h-2.jpeg",
-      "/hb20h/hb20h-5.jpg"
+      "/hb20h/hb20h-4.webp",
+      "/hb20h/hb20h-1.webp",
+      "/hb20h/hb20h-3.webp",
+      "/hb20h/hb20h-2.webp",
+      "/hb20h/hb20h-5.webp"
     ],
     videoUrl: "https://www.youtube.com/watch?v=23hJMspQP4s"
   }
@@ -357,10 +357,10 @@ colores: {
     brochureUrl:
       "https://www.hyundai.com.ar/publicfiles/datasheets/hb20sfichatecnica-final_compressed_1732281228.pdf",
     imagenes: [
-      "/hb20/hb20-1.jpg",
-      "/hb20/hb20-2.jpg",
-      "/hb20/hb20-3.jpg",
-      "/hb20/hb20-4.jpg"
+      "/hb20/hb20-1.webp",
+      "/hb20/hb20-2.webp",
+      "/hb20/hb20-3.webp",
+      "/hb20/hb20-4.webp"
     ],
     videoUrl: "https://www.youtube.com/watch?v=FaVtVAIRu_Q"
   }
@@ -481,13 +481,13 @@ const creta: DetalleVehiculo = {
     brochureUrl:
       "https://www.hyundai.com.ar/publicfiles/datasheets/fichatecnicaall-newcreta_1736781247.pdf",
     imagenes: [
-      "/creta/creta-1.jpg",
-      "/creta/creta-2.jpg",
-      "/creta/creta-3.jpg",
-      "/creta/creta-4.jpg",
-      "/creta/creta-5.jpg",
-      "/creta/creta-6.jpg",
-      "/creta/creta-7.jpg"
+      "/creta/creta-1.webp",
+      "/creta/creta-2.webp",
+      "/creta/creta-3.webp",
+      "/creta/creta-4.webp",
+      "/creta/creta-5.webp",
+      "/creta/creta-6.webp",
+      "/creta/creta-7.webp"
     ],
     videoUrl: "https://www.youtube.com/watch?v=6q1Qaq6ZqLk"
   }
@@ -609,14 +609,14 @@ const tucson: DetalleVehiculo = {
     brochureUrl:
       "https://www.hyundai.com.ec/static/media/nuevo-tucson-ficha-tecnica.8ea68457.pdf",
     imagenes: [
-      "/tucson/tucson-1.jpg",
-      "/tucson/tucson-2.jpg",
-      "/tucson/tucson-3.jpg",
-      "/tucson/tucson-4.jpg",
-      "/tucson/tucson-5.jpg",
-      "/tucson/tucson-6.jpg",
-      "/tucson/tucson-7.jpg",
-      "/tucson/tucson-8.jpg"
+      "/tucson/tucson-1.webp",
+      "/tucson/tucson-2.webp",
+      "/tucson/tucson-3.webp",
+      "/tucson/tucson-4.webp",
+      "/tucson/tucson-5.webp",
+      "/tucson/tucson-6.webp",
+      "/tucson/tucson-7.webp",
+      "/tucson/tucson-8.webp"
     ],
     videoUrl: "https://www.youtube.com/watch?v=Dmgn7zpVsms"
   }
@@ -737,13 +737,13 @@ const santaFe: DetalleVehiculo = {
     brochureUrl:
       "https://www.hyundai.com.ar/publicfiles/datasheets/ficha-tecnica-nueva-santa-fe_1756483893.pdf",
     imagenes: [
-      "/santafe/santafe-3.jpg",
-      "/santafe/santafe-1.jpg",
-      "/santafe/santafe-2.jpg",
-      "/santafe/santafe-4.jpg",
-      "/santafe/santafe-5.jpg",
-      "/santafe/santafe-6.jpg",
-      "/santafe/santafe-7.jpg"
+      "/santafe/santafe-3.webp",
+      "/santafe/santafe-1.webp",
+      "/santafe/santafe-2.webp",
+      "/santafe/santafe-4.webp",
+      "/santafe/santafe-5.webp",
+      "/santafe/santafe-6.webp",
+      "/santafe/santafe-7.webp"
     ],
     videoUrl: "https://www.youtube.com/watch?v=CYK0ONs8PNY"
   }
@@ -864,12 +864,12 @@ const staria: DetalleVehiculo = {
     brochureUrl:
       "https://cdn.motor1.com/pdf-files/ficha-tecnica-hyundai-staria-4wd-2022.pdf",
     imagenes: [
-      "/staria/staria-1.jpg",
-      "/staria/staria-2.jpg",
-      "/staria/staria-3.jpg",
-      "/staria/staria-4.jpg",
-      "/staria/staria-5.jpg",
-      "/staria/staria-6.jpg"
+      "/staria/staria-1.webp",
+      "/staria/staria-2.webp",
+      "/staria/staria-3.webp",
+      "/staria/staria-4.webp",
+      "/staria/staria-5.webp",
+      "/staria/staria-6.webp"
     ],
     videoUrl: "https://www.youtube.com/watch?v=staria_video_demo"
   }

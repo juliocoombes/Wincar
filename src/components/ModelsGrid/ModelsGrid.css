@@ -119,3 +119,10 @@
     font-size: 1.5rem;
   }
 }
+
+@media (max-width: 599px) {
+  #modelos .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

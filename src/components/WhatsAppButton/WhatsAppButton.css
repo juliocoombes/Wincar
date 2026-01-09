@@ -2,16 +2,24 @@
   position: fixed;
   right: 20px;
   bottom: 20px;
+
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+
+  z-index: 9999;
   cursor: pointer;
+
+  /* evita “jitter” visual */
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  will-change: transform;
 }
 
 .whatsapp-btn img {
@@ -19,11 +27,10 @@
   height: 60%;
 }
 
-/* Ajuste para mobile (un poco más chico si querés) */
 @media (max-width: 768px) {
   .whatsapp-btn {
     right: 16px;
-    bottom: 16px;
+    bottom: 24px;
     width: 52px;
     height: 52px;
   }

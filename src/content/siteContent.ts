@@ -85,7 +85,7 @@ const content: SiteContent = {
   hero: {
   slides: [
     {
-      imagen: "/carrousel/carrousel-3.jpg",
+      imagen: "/carrousel/carrousel-3.webp",
       titulo: "HB20",
       subtitulo: "Potencia, seguridad y tecnología.",
       ctaPrincipal: { label: "Descubrir", href: "/modelos/hb20" },
@@ -93,32 +93,32 @@ const content: SiteContent = {
       imagenLateral: "/images/lado1.png"
     },
     {
-      imagen: "/carrousel/carrousel-6.jpg",
+      imagen: "/carrousel/carrousel-6.webp",
       titulo: "Nueva Creta",
       subtitulo: "Conectividad total.",
       ctaPrincipal: { label: "Descubrir", href: "/modelos/creta" },
       imagenLateral: "/images/lado2.png"
     },
     {
-      imagen: "/carrousel/carrousel-4.jpg",
+      imagen: "/carrousel/carrousel-4.webp",
       titulo: "HB20s",
       subtitulo: "Elegancia y performance.",
       ctaPrincipal: { label: "Descubrir", href: "/modelos/hb20s" }
     },
     {
-      imagen: "/carrousel/carrousel-2.jpg",
+      imagen: "/carrousel/carrousel-2.webp",
       titulo: "Nueva Tucson",
       subtitulo: "Elegancia y performance.",
       ctaPrincipal: { label: "Descubrir", href: "/modelos/creta" }
     },
     {
-      imagen: "/carrousel/carrousel-1.jpg",
+      imagen: "/carrousel/carrousel-1.webp",
       titulo: "Santa Fe",
       subtitulo: "Elegancia y performance.",
       ctaPrincipal: { label: "Descubrir", href: "/modelos/santafe" }
     },
     {
-      imagen: "/carrousel/carrousel-5.jpg",
+      imagen: "/carrousel/carrousel-5.webp",
       titulo: "Staria",
       subtitulo: "Elegancia y performance.",
       ctaPrincipal: { label: "Descubrir", href: "/modelos/staria" }
